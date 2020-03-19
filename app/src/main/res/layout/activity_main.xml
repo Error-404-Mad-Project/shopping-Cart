@@ -11,9 +11,9 @@
         android:layout_width="180dp"
         android:layout_height="225dp"
         app:srcCompat="@drawable/logo"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="124dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="114dp" />
 
     <EditText
         android:id="@+id/editText"
