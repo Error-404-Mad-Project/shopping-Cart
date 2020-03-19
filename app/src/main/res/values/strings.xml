@@ -15,4 +15,6 @@
     <string name="Qut">Qut</string>
     <string name="todo">TODO</string>
     <string name="todo">TODO</string>
+    <string name="regbtn">REGISTER</string>
+    <string name="sname">Sample Name</string>
 </resources>

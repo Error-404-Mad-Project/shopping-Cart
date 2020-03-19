@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".delevery_Intruduction"></activity>
+        <activity android:name=".customer_deteils"></activity>
+        <activity android:name=".customer_edit" />
+        <activity android:name=".register" />
+        <activity android:name=".registration" />
+        <activity android:name=".delevery_Intruduction" />
         <activity android:name=".delevery_thankyou" />
         <activity android:name=".delevery_activity_main" />
         <activity android:name=".CheckOut" />
