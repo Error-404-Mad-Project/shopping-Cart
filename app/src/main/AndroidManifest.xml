@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CheckOut"></activity>
+        <activity android:name=".delevery_Intruduction"></activity>
+        <activity android:name=".delevery_thankyou" />
+        <activity android:name=".delevery_activity_main" />
+        <activity android:name=".CheckOut" />
         <activity android:name=".My_Cart" />
         <activity android:name=".MainActivity">
             <intent-filter>
