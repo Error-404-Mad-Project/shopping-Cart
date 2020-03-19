@@ -13,7 +13,7 @@
         app:srcCompat="@drawable/logo"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="128dp" />
+        tools:layout_editor_absoluteY="141dp" />
 
     <EditText
         android:id="@+id/editText"
