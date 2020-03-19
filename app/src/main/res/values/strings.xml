@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Shopping Cart</string>
+    <string name="text1">Description</string>
+    <string name="text2">Description</string>
+    <string name="text3">Description</string>
+    <string name="text4">Description</string>
+    <string name="text5">Description</string>
+    <string name="text6">Description</string>
+    <string name="text7">Description</string>
+    <string name="text8">Description</string>
+    <string name="add_Cart">Add Cart</string>
+    <string name="comment">Comment</string>
+    <string name="delete_btn">Delete</string>
+    <string name="buy_btn">Buy</string>
+    <string name="Qut">Qut</string>
+</resources>
