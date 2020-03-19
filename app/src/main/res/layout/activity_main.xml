@@ -199,7 +199,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@android:drawable/ic_menu_gallery"
             tools:layout_editor_absoluteY="26dp"
-            tools:srcCompat="?attr/actionModeSplitBackground" />
+            tools:srcCompat="?attr/actionModeSplitBackground"
+            android:contentDescription="@string/todo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -220,7 +221,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_menu_gallery"
         tools:layout_editor_absoluteY="579dp"
-        tools:srcCompat="?attr/actionModeSplitBackground" />
+        tools:srcCompat="?attr/actionModeSplitBackground"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -242,7 +244,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_menu_gallery"
         tools:layout_editor_absoluteY="420dp"
-        tools:srcCompat="?attr/actionModeSplitBackground" />
+        tools:srcCompat="?attr/actionModeSplitBackground"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -253,7 +256,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_menu_gallery"
         tools:layout_editor_absoluteY="341dp"
-        tools:srcCompat="?attr/actionModeSplitBackground" />
+        tools:srcCompat="?attr/actionModeSplitBackground"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -264,7 +268,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_menu_gallery"
         tools:layout_editor_absoluteY="260dp"
-        tools:srcCompat="?attr/actionModeSplitBackground" />
+        tools:srcCompat="?attr/actionModeSplitBackground"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView2"
