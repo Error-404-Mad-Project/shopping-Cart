@@ -13,8 +13,10 @@
     <string name="delete_btn">Delete</string>
     <string name="buy_btn">Buy</string>
     <string name="Qut">Qut</string>
-    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
     <string name="todo">TODO</string>
     <string name="regbtn">REGISTER</string>
     <string name="sname">Sample Name</string>
+    <string name="editacomment">Editacomment</string>
+    <string name="logo">TODO</string>
 </resources>

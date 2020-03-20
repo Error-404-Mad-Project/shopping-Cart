@@ -24,22 +24,10 @@
         android:text="Post"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77" />
-
-    <Button
-        android:id="@+id/button16"
-        android:layout_width="125dp"
-        android:layout_height="60dp"
-        android:text="<"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.769" />
+        app:layout_constraintVertical_bias="0.788" />
 
     <ImageButton
         android:id="@+id/imageButton10"
@@ -82,7 +70,7 @@
         android:layout_height="134dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Edit a comment...."
+        android:text="@string/editacomment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".acivity_commentView"></activity>
+        <activity android:name=".acivity_itemAdd"></activity>
+        <activity android:name=".acivity_commentView" />
         <activity android:name=".activity_edit" />
         <activity android:name=".acivity_comment" />
         <activity android:name=".activity_reply" />
