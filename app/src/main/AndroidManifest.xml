@@ -9,21 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".acivity_itemAdd"></activity>
-        <activity android:name=".acivity_commentView" />
-        <activity android:name=".activity_edit" />
-        <activity android:name=".acivity_comment" />
-        <activity android:name=".activity_reply" />
-        <activity android:name=".customer_deteils" />
-        <activity android:name=".customer_edit" />
-        <activity android:name=".Login" />
-        <activity android:name=".registration" />
-        <activity android:name=".delevery_Intruduction" />
-        <activity android:name=".delevery_thankyou" />
-        <activity android:name=".delevery_activity_main" />
-        <activity android:name=".CheckOut" />
-        <activity android:name=".My_Cart" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".DeliveryThankyouActivity"></activity>
+        <activity android:name=".Instructions" />
+        <activity android:name=".DeliveryActivityMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
