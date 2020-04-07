@@ -14,16 +14,16 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="390dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="242dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="32dp"
         android:scrollbarTrackHorizontal="?attr/actionModePasteDrawable"
-        android:text="@string/please_enter_your_delivery_details"
+        android:text="Enter your details"
         android:textColor="#061463"
         android:textColorHighlight="#0C78CD"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.313"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,6 +46,7 @@
         android:layout_height="45dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="Mr. / Mis."
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,6 +73,7 @@
         android:layout_height="47dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="No.5, Gemunu Road, Nugegoda"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,13 +100,14 @@
         android:layout_width="356dp"
         android:layout_height="49dp"
         android:layout_marginTop="72dp"
+        android:autofillHints=""
         android:ems="10"
+        android:hint="+94********"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <TextView
         android:id="@+id/textView5"
@@ -125,6 +128,7 @@
         android:layout_width="354dp"
         android:layout_height="49dp"
         android:ems="10"
+        android:hint="info@consoleit.com"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,5 +147,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4"
         app:layout_constraintVertical_bias="0.423" />
+
+    <ImageView
+        android:layout_width="62dp"
+        android:layout_height="58dp"
+        android:src="@drawable/delete"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.225" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
