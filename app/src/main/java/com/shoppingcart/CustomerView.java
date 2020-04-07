@@ -1,8 +1,10 @@
 package com.shoppingcart;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -24,14 +26,22 @@ public class CustomerView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_customer_view2);
+
         Toolbar toolbar = findViewById (R.id.toolbar);
         setSupportActionBar (toolbar);
         FloatingActionButton fab = findViewById (R.id.fab);
         fab.setOnClickListener (new View.OnClickListener () {
+
             @Override
             public void onClick(View view) {
                 Snackbar.make (view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction ("Action", null).show ();
+                // Get the Intent that started this activity and extract the string
+                Intent intent = getIntent ();
+                String message = intent.getStringExtra (RegistrationForm.EXTRA_MESSAGE);
+                // Capture the layout's TextView and set the string as its text
+                TextView textView = findViewById (R.id.textView17);
+                textView.setText (message);
             }
         });
         DrawerLayout drawer = findViewById (R.id.drawer_layout);
@@ -39,12 +49,14 @@ public class CustomerView extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder (
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.logout)
                 .setDrawerLayout (drawer)
                 .build ();
         NavController navController = Navigation.findNavController (this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController (this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController (navigationView, navController);
+
+
     }
 
     @Override

@@ -11,17 +11,37 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class RegistrationForm extends AppCompatActivity {
 
+    Button nextpage;
     private static final String CHANNEL_ID = String.valueOf(0);
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_registration_form);
 
+        nextpage = (Button) findViewById(R.id.button);
+        nextpage.setOnClickListener (new View.OnClickListener () { /** Called when the user taps the Register button */
+        @Override
+        public void onClick(View v) {
+            // Do something in response to button
+            Intent intent = new Intent (RegistrationForm.this,CustomerView.class);
+            EditText editText = (EditText) findViewById (R.id.editText5);
+            EditText editText1 = (EditText) findViewById (R.id.editText7);
+            EditText editText2 = (EditText) findViewById (R.id.editText8);
+            EditText editText3 = (EditText) findViewById (R.id.editText9);
+            EditText editText4 = (EditText) findViewById (R.id.editText10);
+            EditText editText5 = (EditText) findViewById (R.id.editText11);
+            String message =editText.getText ().toString ();
+            intent.putExtra (EXTRA_MESSAGE, message);
+            startActivity (intent);
+        }
+        });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = "shopping-Cart";
