@@ -22,4 +22,20 @@
     <string name="thank_you">Thank You...!</string>
     <string name="your_orders_are_still_processing">Your Orders are still processing...</string>
     <string name="stay_with_us_our_delivery_agent_will_contact_you_immediatly">Stay with us, Our delivery agent will contact you immediatly.</string>
+    <string name="thank_youu">Thank You!...</string>
+    <string name="todo">TODO</string>
+    <string name="instruction">Follow Instruction</string>
+    <string name="real">1. Your address must be a real one.</string>
+    <string name="phone">2. Your telephone number must be a working       one.</string>
+    <string name="bag">3. We avoid using polythene bags.Then you             have to pay Rs 5 for one paper bag.</string>
+    <string name="confirm">4. After you confirm the delivery details,our delivery argent will contact you.</string>
+    <string name="contact">5. When you finished the all steps, our argent call to you between 5 minutes. Please keep the phone with you. Stay with usas long as contact you.</string>
+    <string name="Cancelq">Cancel</string>
+    <string name="Next">Next</string>
+    <string name="detail">Enter your details</string>
+    <string name="mmm">Mr. / Mis.</string>
+    <string name="add">No.5, Gemunu Road, Nugegoda</string>
+    <string name="tp">Telephone Number</string>
+    <string name="nine">+94********</string>
+    <string name="mail">info@consoleit.com</string>
 </resources>

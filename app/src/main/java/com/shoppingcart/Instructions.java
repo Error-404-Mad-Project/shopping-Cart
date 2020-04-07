@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.shoppingcart.R;
-
 public class Instructions extends AppCompatActivity {
     private Button button;
 
@@ -17,11 +15,14 @@ public class Instructions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instructions);
 
+        getSupportActionBar().setTitle("Instructions");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         button = (Button) findViewById(R.id.button3);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Instructions.this, DeliveryThankyouActivity.class);
+                Intent intent = new Intent(Instructions.this, ThankYou.class);
                 startActivity(intent);
             }
         });

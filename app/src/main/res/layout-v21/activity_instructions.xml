@@ -126,14 +126,13 @@
         android:id="@+id/button3"
         android:layout_width="180dp"
         android:layout_height="54dp"
-        android:text="Next"
+        android:backgroundTint="#00695C"
+        android:text="@string/Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.579"
         app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toBottomOf="@+id/radioButton3"
-        app:layout_constraintVertical_bias="0.298"
-        android:backgroundTint="#00695C"
-        />
+        app:layout_constraintVertical_bias="0.298" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
