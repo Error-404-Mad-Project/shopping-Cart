@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">ShopForMe</string>
-    <string name="userName">" Name"</string>
-    <string name="password">" Password*"</string>
+    <string name="userName">Name</string>
+    <string name="password">Password*</string>
     <string name="register">REGISTER</string>
     <string name="cancle">LOGIN</string>
     <string name="fogotPassword">Fogot Password?</string>
     <string name="custName">NAME</string>
-    <string name="name">"  Name"</string>
+    <string name="name">Name</string>
     <string name="email">E MAIL ADDRESS</string>
-    <string name="mail_login">"  info@consoleit,com"</string>
+    <string name="mail_login">info@consoleit,com</string>
     <string name="address">ADDRESS</string>
     <string name="homeAddress" />
     <string name="telephone">TELEPHONE</string>
@@ -17,9 +17,9 @@
     <string name="loginText">Login to your account</string>
     <string name="login_loge">logo</string>
     <string name="fogotInterface">Forgot Password</string>
-    <string name="forgot_text">" Enter the email address associated with your account. "</string>
+    <string name="forgot_text">"Enter the email address associated with your account. "</string>
     <string name="send_email">We will email you a link to reset your password</string>
-    <string name="enterEmail">" Enter Email Address"</string>
+    <string name="enterEmail">Enter Email Address</string>
     <string name="send">SEND</string>
     <string name="newPassword">New Password</string>
     <string name="new_Password">"Enter your new password below we 're  just being extra careful "</string>
@@ -48,5 +48,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forgot_password">Forgot Password?</string>
+
 
 </resources>
