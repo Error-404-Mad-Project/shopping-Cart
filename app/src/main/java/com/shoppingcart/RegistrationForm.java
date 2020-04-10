@@ -18,8 +18,16 @@ import android.widget.EditText;
 
 public class RegistrationForm extends AppCompatActivity {
 
+    EditText userName;
+    EditText emailAddress;
+    EditText address;
+    EditText phoneNumber;
+    EditText password;
+    EditText confirmPassword;
+
     private Button nextPage;
     private ProgressDialog loadingBar;
+
     private static final String CHANNEL_ID = String.valueOf(0);
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     public static final String EXTRA_MESSAGE1 = "Second Message";

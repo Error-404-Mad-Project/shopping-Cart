@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+//import com.shoppingcart.Prevalent.Prevalent;
 
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -51,8 +52,6 @@ public class CustomerView extends AppCompatActivity
         textView2.setText(message2);
         textView3.setText(message3);
 
-
-
         Toolbar toolbar = findViewById (R.id.toolbar);
         toolbar.setTitle ("CustomerView");
         setSupportActionBar (toolbar);
@@ -75,6 +74,12 @@ public class CustomerView extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById (R.id.nav_view);
         navigationView.setNavigationItemSelectedListener (this);
+
+        View headerView = navigationView.getHeaderView (0);
+        TextView userNameTextView = headerView.findViewById (R.id.user_profile_name);
+        TextView userEmailTextView = headerView.findViewById (R.id.textView);
+
+//        userNameTextView.setText (Prevalent.currentOnlineUser.getName());
 
     }
 
