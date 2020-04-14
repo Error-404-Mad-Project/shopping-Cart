@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,13 +9,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="347dp"
-        android:layout_height="259dp"
-        android:layout_marginTop="176dp"
-
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="168dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,37 +23,38 @@
         android:id="@+id/textView6"
         android:layout_width="252dp"
         android:layout_height="72dp"
+        android:layout_marginTop="52dp"
         android:text="@string/thank_you"
+        android:textColor="#090909"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547"
-        android:textColor="#090909"
-        />
+        app:layout_constraintVertical_bias="0.288" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="291dp"
         android:layout_height="35dp"
-        android:text="your orders are still processing...."
+        android:layout_marginBottom="24dp"
+        android:text="@string/order"
         android:textColor="#090909"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/textView13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="285dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="4dp"
-        android:text="Stay with us. Our delivery agent will contact you immediatly."
+        android:layout_marginBottom="208dp"
+        android:text="@string/con"
         android:textColor="#090909"
         android:textColorHint="#0B0A0A"
         android:textColorLink="#0C0C0C"
@@ -61,13 +63,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintVertical_bias="0.79" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="200dp"
         android:layout_height="54dp"
-        android:text="Finish"
+        android:backgroundTint="#00695C"
+        android:text="@string/Finish"
         android:textColorLink="#4CAF50"
         android:textSize="20sp"
         android:visibility="visible"
@@ -75,8 +78,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
-        app:layout_constraintVertical_bias="0.239"
-        android:backgroundTint="#00695C"
-        />
+        app:layout_constraintVertical_bias="0.239" tools:targetApi="lollipop"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

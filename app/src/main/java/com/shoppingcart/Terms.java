@@ -4,16 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ThankYou extends AppCompatActivity {
+public class Terms extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delivery_thankyou);
+        setContentView(R.layout.activity_terms);
 
-//        getSupportActionBar().setTitle("Thank you");
+//        getSupportActionBar().setTitle("Terms & Conditions");
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//
-
     }
 }

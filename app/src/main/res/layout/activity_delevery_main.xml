@@ -45,7 +45,7 @@
         android:layout_height="45dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/mmm"
+        android:hint="@string/mr_mis"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
         android:layout_height="47dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/add"
+        android:hint="@string/no_5_gemunu_road_nugegoda"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +84,7 @@
         android:id="@+id/textView4"
         android:layout_width="166dp"
         android:layout_height="25dp"
-        android:text="@string/tp"
+        android:text="@string/telephone_number"
         android:textColor="#090909"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editText3"
@@ -101,7 +101,7 @@
         android:layout_marginTop="72dp"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/nine"
+        android:hint="@string/_94"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.563"
@@ -127,7 +127,7 @@
         android:layout_width="354dp"
         android:layout_height="49dp"
         android:ems="10"
-        android:hint="@string/mail"
+        android:hint="@string/info_consoleit_com"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -150,18 +150,18 @@
         app:layout_constraintTop_toBottomOf="@+id/editText4"
         app:layout_constraintVertical_bias="0.405"
         android:backgroundTint="#00695C"
-        />
+        tools:targetApi="lollipop" />
 
 
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="78dp"
-        android:layout_height="72dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton2"-->
+<!--        android:layout_width="78dp"-->
+<!--        android:layout_height="72dp"-->
+<!--        android:contentDescription="@string/TODO"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/editText"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@android:drawable/ic_menu_delete" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

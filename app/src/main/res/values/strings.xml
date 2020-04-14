@@ -38,4 +38,18 @@
     <string name="tp">Telephone Number</string>
     <string name="nine">+94********</string>
     <string name="mail">info@consoleit.com</string>
+    <string name="order">your orders are still processing....</string>
+    <string name="con">Stay with us. Our delivery agent will contact you immediatly.</string>
+    <string name="Finish">Finish</string>
+    <string name="nextt">Next</string>
+    <string name="todos">TODO</string>
+    <string name="mr_mis">Mr. / Mis.</string>
+    <string name="no_5_gemunu_road_nugegoda">No.5, Gemunu Road, Nugegoda</string>
+    <string name="telephone_number">Telephone Number</string>
+    <string name="_94">+94********</string>
+    <string name="info_consoleit_com">info@consoleit.com</string>
+    <string name="TODO">TODO</string>
+    <string name="term"><![CDATA[Terms & Conditions]]></string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="termss"><![CDATA[Terms & Conditions]]></string>
 </resources>
