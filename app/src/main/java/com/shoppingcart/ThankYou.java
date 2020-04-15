@@ -11,9 +11,11 @@ public class ThankYou extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_thankyou);
 
-//        getSupportActionBar().setTitle("Thank you");
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//
+        if(getActionBar() != null) {
+            getSupportActionBar().setTitle("Thank you");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
 
     }
 }

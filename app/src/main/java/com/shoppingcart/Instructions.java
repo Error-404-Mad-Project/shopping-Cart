@@ -19,8 +19,12 @@ public class Instructions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instructions);
 
-//        getSupportActionBar().setTitle("Instructions");
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getActionBar() != null)
+        {
+            getActionBar().setTitle("Instructions");
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
 
         button = (Button) findViewById(R.id.button3);
         cancelButton = (Button) findViewById(R.id.button2);

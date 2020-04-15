@@ -11,7 +11,9 @@ public class Terms extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terms);
 
-//        getSupportActionBar().setTitle("Terms & Conditions");
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getActionBar() != null) {
+            getSupportActionBar().setTitle("Terms & Conditions");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 }
