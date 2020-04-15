@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1000153495583",
+    "firebase_url": "https://shopforme-96a5b.firebaseio.com",
+    "project_id": "shopforme-96a5b",
+    "storage_bucket": "shopforme-96a5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000153495583:android:f1c95591bd53075b527d2a",
+        "android_client_info": {
+          "package_name": "com.shoppingcart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000153495583-ajm4f8ptnogonlva9il21l5i5e49h2ch.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shoppingcart",
+            "certificate_hash": "6f5fd8dd76898ecf3e337393b7b2265cc73768b1"
+          }
+        },
+        {
+          "client_id": "1000153495583-56r2mpn7mn8jnlk83gaoijhtrepk9qbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPM5cuVbu6UYNEClh-IyHkmONKZYmUzAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000153495583-56r2mpn7mn8jnlk83gaoijhtrepk9qbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
