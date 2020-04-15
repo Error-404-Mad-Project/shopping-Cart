@@ -52,4 +52,9 @@
     <string name="term"><![CDATA[Terms & Conditions]]></string>
     <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
     <string name="termss"><![CDATA[Terms & Conditions]]></string>
+    <string name="choose_a_delivery_type">Choose a Delivery Type</string>
+    <string name="RadioButton">Delivery Bike</string>
+    <string name="RadioButton2">Delivery Threeweeller</string>
+    <string name="radio3">Delivery Mini Van</string>
+    <string name="imageView2">TODO</string>
 </resources>

@@ -8,8 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.*;
 
 public class Instructions extends AppCompatActivity {
+
+    private RadioGroup radioGroupPhoto;
+    private ImageView imageViewphoto;
+    private Integer []photos = { R.drawable.bike, R.drawable.weller, R.drawable.van};
+
     private Button button;
     private Button cancelButton;
     private TextView textView;
@@ -18,6 +24,17 @@ public class Instructions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instructions);
+
+        this.imageViewphoto = (ImageView) findViewById(R.id.imageViewphoto);
+        this.radioGroupPhoto = (RadioGroup) findViewById(R.id.RadioGroupPhoto);
+        this.radioGroupPhoto.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton =(RadioButton) radioGroupPhoto.findViewById(checkedId);
+                int index = radioGroupPhoto.indexOfChild(radioButton);
+                imageViewphoto.setImageResource(photos[index]);
+            }
+        });
 
         if(getActionBar() != null)
         {
