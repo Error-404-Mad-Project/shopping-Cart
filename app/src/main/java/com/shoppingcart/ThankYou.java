@@ -9,7 +9,7 @@ public class ThankYou extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delivery_thankyou);
+        setContentView(R.layout.activity_thank_you);
 
         if(getActionBar() != null) {
             getSupportActionBar().setTitle("Thank you");

@@ -109,7 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView666"
         android:layout_width="114dp"
         android:layout_height="20dp"
         android:layout_marginTop="40dp"
@@ -133,7 +133,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView666" />
 
     <Button
         android:id="@+id/button"

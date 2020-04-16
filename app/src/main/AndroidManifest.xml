@@ -9,17 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Terms"
-            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
-            android:parentActivityName=".Instructions"></activity>
-
-        <activity android:name=".ThankYou"
-            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
-            android:parentActivityName=".Instructions"></activity>
-
-        <activity android:name=".Instructions"
-            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
-            android:parentActivityName=".DeliveryActivityMain"></activity>
+        <activity
+            android:name=".ThankYou"
+            android:parentActivityName=".Payment"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"/>
+        <activity
+            android:name=".Terms"
+            android:parentActivityName=".Instructions"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
+        <activity
+            android:name=".Payment"
+            android:parentActivityName=".Instructions"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
+        <activity
+            android:name=".Instructions"
+            android:parentActivityName=".DeliveryActivityMain"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
         <activity android:name=".DeliveryActivityMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

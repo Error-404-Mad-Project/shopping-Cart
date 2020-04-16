@@ -43,12 +43,12 @@ public class Instructions extends AppCompatActivity {
         }
 
 
-        button = (Button) findViewById(R.id.button3);
-        cancelButton = (Button) findViewById(R.id.button2);
+        button = (Button) findViewById(R.id.button38);
+        cancelButton = (Button) findViewById(R.id.button34);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Instructions.this, ThankYou.class);
+                Intent intent = new Intent(Instructions.this, Payment.class);
                 startActivity(intent);
             }
         });

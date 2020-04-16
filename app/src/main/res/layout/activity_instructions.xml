@@ -8,7 +8,7 @@
     tools:context=".Instructions">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView666"
         android:layout_width="331dp"
         android:layout_height="48dp"
         android:gravity="center_horizontal"
@@ -26,12 +26,12 @@
 
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button34"
         android:layout_width="180dp"
         android:layout_height="54dp"
         android:layout_marginBottom="52dp"
         android:backgroundTint="#3F51B5"
-        android:text="@string/Cancelq"
+        android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.069"
@@ -41,7 +41,7 @@
         tools:targetApi="lollipop" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button38"
         android:layout_width="180dp"
         android:layout_height="54dp"
         android:layout_marginBottom="52dp"
@@ -50,7 +50,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/button34"
         app:layout_constraintTop_toBottomOf="@+id/RadioGroupPhoto"
         app:layout_constraintVertical_bias="0.697"
         tools:ignore="UnknownId"

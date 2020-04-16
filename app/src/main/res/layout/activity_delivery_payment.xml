@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Payment">
+
+    <TextView
+        android:id="@+id/textView666"
+        android:layout_width="331dp"
+        android:layout_height="48dp"
+        android:gravity="center_horizontal"
+        android:text="@string/choose_your_patment_method"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textColorHint="#3F51B5"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="#3F51B5"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewphoto1"
+        app:layout_constraintVertical_bias="1.0"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/button33"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="160dp"
+        android:backgroundTint="#3F51B5"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/button11"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewphoto1"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="UnknownId"
+        tools:targetApi="lollipop" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroupPhoto15"
+        android:layout_width="390dp"
+        android:layout_height="134dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.182">
+
+        <RadioButton
+            android:id="@+id/radioButton11"
+            android:layout_width="384dp"
+            android:layout_height="27dp"
+            android:text="@string/master_card"
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="113dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton22"
+            android:layout_width="375dp"
+            android:layout_height="30dp"
+            android:text="@string/visa_card"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton33"
+            tools:layout_editor_absoluteX="20dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton33"
+            android:layout_width="382dp"
+            android:layout_height="33dp"
+            android:text="@string/cash_on_delivery" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageViewphoto1"
+        android:layout_width="332dp"
+        android:layout_height="183dp"
+        android:layout_marginTop="8dp"
+
+
+        android:contentDescription="@string/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RadioGroupPhoto15"
+        app:srcCompat="@drawable/master" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

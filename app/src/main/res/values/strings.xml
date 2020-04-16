@@ -57,4 +57,9 @@
     <string name="RadioButton2">Delivery Threeweeller</string>
     <string name="radio3">Delivery Mini Van</string>
     <string name="imageView2">TODO</string>
+    <string name="back">Back</string>
+    <string name="master_card">Master Card</string>
+    <string name="visa_card">Visa Card</string>
+    <string name="cash_on_delivery">Cash On Delivery</string>
+    <string name="choose_your_patment_method">Choose Your Patment Method</string>
 </resources>
