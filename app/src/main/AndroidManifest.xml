@@ -18,7 +18,10 @@
         </activity>
         <activity android:name=".Reply" />
         <activity android:name=".Edit" />
-        <activity android:name=".Comment" >
+        <activity android:name=".Comment"
+            android:parentActivityName=".View">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".View"></meta-data>
             <intent-filter>
                 <action android:name="android.intent.action.Comment"/>
 

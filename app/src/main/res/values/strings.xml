@@ -1,4 +1,7 @@
 <resources>
+
+
+
     <string name="app_name">ShopForMe</string>
     <string name="userName">Name</string>
     <string name="password">Password*</string>
