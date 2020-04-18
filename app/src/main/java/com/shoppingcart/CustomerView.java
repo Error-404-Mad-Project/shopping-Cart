@@ -26,9 +26,6 @@ public class CustomerView extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-    //Paper.init(this);
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
@@ -61,6 +58,9 @@ public class CustomerView extends AppCompatActivity
 
             @Override
             public void onClick(View view) {
+
+                Paper.book ().destroy ();
+
                 Snackbar.make (view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction ("Action", null).show ();
                 // Get the Intent that started this activity and extract the string

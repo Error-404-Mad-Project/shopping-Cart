@@ -4,13 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,6 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.shoppingcart.Model.Users;
+import com.shoppingcart.Prevalent.Prevalent;
+
+import io.paperdb.Paper;
 
 
 //import com.shoppingcart.Prevalent.Prevalent;
@@ -26,10 +32,12 @@ import com.shoppingcart.Model.Users;
 public class Login extends AppCompatActivity {
 
     private EditText mTextUsername, mTextPassword;
+    private TextView mTextForgotPassword;
     private Button mButtonRegister, mButtonLogin;
     private ProgressDialog loadingBar;
 
     private String parentDbName = "Users";
+    private CheckBox chkBoxRememberMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +46,14 @@ public class Login extends AppCompatActivity {
 
         mTextUsername = (EditText) findViewById (R.id.editText);
         mTextPassword = (EditText) findViewById (R.id.editText3);
+        mTextForgotPassword = (TextView) findViewById (R.id.textView23);
         mButtonRegister = (Button) findViewById (R.id.button3);
         mButtonLogin = (Button) findViewById (R.id.button4);
+
         loadingBar = new ProgressDialog (this);
+
+//        chkBoxRememberMe = (CheckBox) findViewById (R.id.remember_me_chkb);
+//        Paper.init (this);
 
         mButtonRegister.setOnClickListener (new View.OnClickListener () {
             /**
@@ -51,6 +64,17 @@ public class Login extends AppCompatActivity {
                 // Do something in response to button
                 Intent registerIntent = new Intent (Login.this, RegistrationForm.class);
                 startActivity (registerIntent);
+            }
+        });
+
+        mTextForgotPassword.setOnClickListener (new View.OnClickListener () {
+            /**
+             * Called when the user taps the Forgot Password button
+             */
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (Login.this, ForgotPassword.class);
+                startActivity (intent);
             }
         });
 
@@ -95,6 +119,12 @@ public class Login extends AppCompatActivity {
 
             private void AllowAccessToAccount(final String name, final String password)
             {
+//                if (chkBoxRememberMe.isChecked ())
+//                {
+//                    Paper.book ().write (Prevalent.UserNameKey,name);
+//                    Paper.book ().write (Prevalent.UserPasswordKey,password);
+//                }
+
                 final DatabaseReference RootRef;
                 RootRef = FirebaseDatabase.getInstance ().getReference ();
 
