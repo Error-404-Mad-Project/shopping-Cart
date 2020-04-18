@@ -2,17 +2,10 @@ package com.shoppingcart;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Message;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
@@ -148,14 +141,16 @@ public class RegistrationForm extends AppCompatActivity {
     }
 
     public void CreateAccount() {
-        String user = userName.getText ().toString ();
+        String name = userName.getText ().toString ();
         String email = emailAddress.getText ().toString ();
         String add = address.getText ().toString ();
         String number = phoneNumber.getText ().toString ();
         String pwd = password.getText ().toString ();
         String cnf_pwd = confirmPassword.getText ().toString ();
 
-        if (TextUtils.isEmpty (user)) {
+
+        if (TextUtils.isEmpty (name)) {
+            userName.setError ("Field can't be empty");
             Toast.makeText (this, "Please enter your Name..", Toast.LENGTH_SHORT).show ();
         } else if (TextUtils.isEmpty (email)) {
             Toast.makeText (this, "Please enter valid email address..", Toast.LENGTH_SHORT).show ();
@@ -170,27 +165,27 @@ public class RegistrationForm extends AppCompatActivity {
             loadingBar.setCanceledOnTouchOutside (false);
             loadingBar.show ();
 
-            Validate (user, email, add, number, pwd, cnf_pwd);
+            Validate (name, email, add, number, pwd, cnf_pwd);
         }
     }
 
-    private void Validate(final String user, final String email, final String add, final String number, final String pwd, final String cnf_pwd) {
+    private void Validate(final String name, final String email, final String add, final String number, final String pwd, final String cnf_pwd) {
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance ().getReference ();
 
         RootRef.addListenerForSingleValueEvent (new ValueEventListener () {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (!(dataSnapshot.child ("Users").child (number).exists ())) {
+                if (!(dataSnapshot.child ("Users").child (name).exists ())) {
                     HashMap<String, Object> userdataMap = new HashMap<> ();
                     userdataMap.put ("email", email);
                     userdataMap.put ("address", add);
                     userdataMap.put ("phone", number);
                     userdataMap.put ("password", pwd);
                     userdataMap.put ("con_Password", cnf_pwd);
-                    userdataMap.put ("name", user);
+                    userdataMap.put ("name", name);
 
-                    RootRef.child ("Users").child (number).updateChildren (userdataMap)
+                    RootRef.child ("Users").child (name).updateChildren (userdataMap)
                             .addOnCompleteListener (new OnCompleteListener<Void> () {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
@@ -209,9 +204,9 @@ public class RegistrationForm extends AppCompatActivity {
                             });
 
                 } else {
-                    Toast.makeText (RegistrationForm.this, "This" + number + "already exists.", Toast.LENGTH_SHORT).show ();
+                    Toast.makeText (RegistrationForm.this, "This" + name + "already exists.", Toast.LENGTH_SHORT).show ();
                     loadingBar.dismiss ();
-                    Toast.makeText (RegistrationForm.this, "Please try again using another number.", Toast.LENGTH_SHORT).show ();
+                    Toast.makeText (RegistrationForm.this, "Please try again using another name.", Toast.LENGTH_SHORT).show ();
 
                     Intent intent = new Intent (RegistrationForm.this, MainActivity.class);
                     startActivity (intent);

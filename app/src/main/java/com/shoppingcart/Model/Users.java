@@ -2,21 +2,22 @@ package com.shoppingcart.Model;
 
 
 public class Users {
-    private String name, phone, password, image, address;
+    private String name, email, address, phone, password, confirm_pass;
 
     public Users()
     {
 
     }
 
-    public Users(String name, String phone, String password, String image, String address) {
+    public Users(String name, String email , String address, String phone, String password, String confirm_pass) {
         this.name = name;
+        this.email = email;
+        this.address = address;
         this.phone = phone;
         this.password = password;
-        this.image = image;
-        this.address = address;
-    }
+        this.confirm_pass = confirm_pass;
 
+    }
 
     public String getName() {
         return name;
@@ -24,6 +25,22 @@ public class Users {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getPhone() {
@@ -42,19 +59,13 @@ public class Users {
         this.password = password;
     }
 
-    public String getImage() {
-        return image;
+    public String getConfirm_pass() {
+        return confirm_pass;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImage(String confirm_pass) {
+        this.confirm_pass = confirm_pass;
     }
 
-    public String getAddress() {
-        return address;
-    }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
 }
