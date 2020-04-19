@@ -142,6 +142,10 @@ public class Login extends AppCompatActivity {
                                     loadingBar.dismiss ();
 
                                     Intent intent = new Intent (Login.this,CustomerView.class);
+                                    intent.putExtra ("UserName", usersData.getName ());
+                                    intent.putExtra ("Email", usersData.getEmail ());
+                                    intent.putExtra ("Address", usersData.getAddress ());
+                                    intent.putExtra ("Phone", usersData.getPhone ());
                                     startActivity (intent);
                                 }
                                 else

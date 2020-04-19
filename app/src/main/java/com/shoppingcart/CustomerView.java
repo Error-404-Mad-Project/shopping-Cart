@@ -39,12 +39,28 @@ public class CustomerView extends AppCompatActivity
         private TextView profileName, profileEmail, profileAddress, profilePhone;
         private FirebaseAuth firebaseAuth;
         private FirebaseDatabase firebaseDatabase;
-
+        private String Name = "";
+        private String Email = "";
+        private String Address = "";
+        private String Phone = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_customer_view2);
+
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if (bundle != null)
+        {
+            Name = getIntent().getExtras().get( "UserName" ).toString();
+            Email = getIntent().getExtras().get( "Email" ).toString();
+            Address = getIntent().getExtras().get( "Address" ).toString();
+            Phone = getIntent().getExtras().get( "Phone" ).toString();
+        }
+
+
 
         //Hooks
 //        userProfilePic = findViewById (R.id.profileImage);
@@ -85,18 +101,6 @@ public class CustomerView extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-
-//                Intent intent = getIntent ();
-//                String userName = intent.getStringExtra ("name");
-//                String userEmail = intent.getStringExtra ("email");
-//                String userAddress = intent.getStringExtra ("address");
-//                String userPhone = intent.getStringExtra ("phone");
-//
-//                profileName.setText (userName);
-//                profileEmail.setText (userEmail);
-//                profileAddress.setText (userAddress);
-//                profilePhone.setText (userPhone);
-
                 Paper.book ().destroy ();
 
                 Snackbar.make (view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -122,16 +126,16 @@ public class CustomerView extends AppCompatActivity
     }
 
     private void showAllData() {
-        Intent intent = getIntent ();
-        String userName = intent.getStringExtra ("name");
-        String userEmail = intent.getStringExtra ("email");
-        String userAddress = intent.getStringExtra ("address");
-        String userPhone = intent.getStringExtra ("phone");
+//        Intent intent = new Intent (getApplicationContext (),RegistrationForm.class);
+//        String userName = intent.getStringExtra ("name");
+//        String userEmail = intent.getStringExtra ("email");
+//        String userAddress = intent.getStringExtra ("address");
+//        String userPhone = intent.getStringExtra ("phone");
 
-        profileName.setText (userName);
-        profileEmail.setText (userEmail);
-        profileAddress.setText (userAddress);
-        profilePhone.setText (userPhone);
+        profileName.setText (Name);
+        profileEmail.setText (Email);
+        profileAddress.setText (Address);
+        profilePhone.setText (Phone);
 
     }
 
