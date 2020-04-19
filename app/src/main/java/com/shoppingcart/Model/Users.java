@@ -9,16 +9,6 @@ public class Users {
 
     }
 
-    public Users(String name, String email , String address, String phone, String password, String confirm_pass) {
-        this.name = name;
-        this.email = email;
-        this.address = address;
-        this.phone = phone;
-        this.password = password;
-        this.confirm_pass = confirm_pass;
-
-    }
-
     public String getName() {
         return name;
     }
@@ -63,9 +53,23 @@ public class Users {
         return confirm_pass;
     }
 
-    public void setImage(String confirm_pass) {
+    public void setConfirm_pass(String confirm_pass) {
         this.confirm_pass = confirm_pass;
     }
 
+    public Users(String name, String email , String address, String phone, String password, String confirm_pass) {
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+        this.password = password;
+        this.confirm_pass = confirm_pass;
 
-}
+    }
+
+
+
+    }
+
+
+

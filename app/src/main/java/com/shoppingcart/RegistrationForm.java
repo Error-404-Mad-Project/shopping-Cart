@@ -197,14 +197,14 @@ public class RegistrationForm extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
 
                                     if (task.isSuccessful ()) {
-//                                        Toast.makeText (RegistrationForm.this, "Congratulations, your account has been created.", Toast.LENGTH_SHORT).show ();
-                                        EditText text = (EditText) findViewById(R.id.editText5);
-                                        String message = text.getText().toString();
-                                        NotificationCompat.Builder builder = new NotificationCompat.Builder (
-                                               RegistrationForm.this
-                                       )
-                                                .setContentTitle("Notification from Sop For Me...!" )
-                                                .setContentText("Hello " + message);
+                                        Toast.makeText (RegistrationForm.this, "Congratulations, your account has been created.", Toast.LENGTH_SHORT).show ();
+//                                        EditText text = (EditText) findViewById(R.id.editText5);
+//                                        String message = text.getText().toString();
+//                                        NotificationCompat.Builder builder = new NotificationCompat.Builder (
+//                                               RegistrationForm.this
+//                                       )
+//                                                .setContentTitle("Notification from Sop For Me...!" )
+//                                                .setContentText("Hello " + message);
 
 
                                         loadingBar.dismiss ();

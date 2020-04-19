@@ -5,14 +5,24 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.shoppingcart.Model.Users;
 //import com.shoppingcart.Prevalent.Prevalent;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -25,29 +35,45 @@ import io.paperdb.Paper;
 public class CustomerView extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+//        private ImageView userProfilePic;
+        private TextView profileName, profileEmail, profileAddress, profilePhone;
+        private FirebaseAuth firebaseAuth;
+        private FirebaseDatabase firebaseDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_customer_view2);
 
-        // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(RegistrationForm.EXTRA_MESSAGE);
-        String message1 = intent.getStringExtra(RegistrationForm.EXTRA_MESSAGE1);
-        String message2 = intent.getStringExtra(RegistrationForm.EXTRA_MESSAGE2);
-        String message3 = intent.getStringExtra(RegistrationForm.EXTRA_MESSAGE3);
+        //Hooks
+//        userProfilePic = findViewById (R.id.profileImage);
+        profileName = findViewById (R.id.textView17);
+        profileEmail = findViewById (R.id.textView18);
+        profileAddress = findViewById (R.id.textView19);
+        profilePhone = findViewById (R.id.textView20);
+        firebaseAuth = FirebaseAuth.getInstance ();
+        firebaseDatabase = FirebaseDatabase.getInstance ();
 
-        // Capture the layout's TextView and set the string as its text
-        TextView textView = findViewById(R.id.textView17);
-        TextView textView1= findViewById(R.id.textView18);
-        TextView textView2= findViewById(R.id.textView19);
-        TextView textView3= findViewById(R.id.textView20);
+        showAllData();
 
-        textView.setText(message);
-        textView1.setText(message1);
-        textView2.setText(message2);
-        textView3.setText(message3);
+//        DatabaseReference databaseReference = firebaseDatabase.getReference (firebaseAuth.getUid ());
+//
+//        databaseReference.addValueEventListener (new ValueEventListener () {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Users users = dataSnapshot.getValue (Users.class);
+//                profileName.setText (Users.getName ());
+//                profileEmail.setText (Users.getEmail ());
+//                profileAddress.setText (Users.getAddress ());
+//                profilePhone.setText (Users.getPhone());
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Toast.makeText (CustomerView.this,databaseError.getCode (),Toast.LENGTH_SHORT).show ();
+//            }
+//        });
 
         Toolbar toolbar = findViewById (R.id.toolbar);
         toolbar.setTitle ("CustomerView");
@@ -58,6 +84,18 @@ public class CustomerView extends AppCompatActivity
 
             @Override
             public void onClick(View view) {
+
+
+//                Intent intent = getIntent ();
+//                String userName = intent.getStringExtra ("name");
+//                String userEmail = intent.getStringExtra ("email");
+//                String userAddress = intent.getStringExtra ("address");
+//                String userPhone = intent.getStringExtra ("phone");
+//
+//                profileName.setText (userName);
+//                profileEmail.setText (userEmail);
+//                profileAddress.setText (userAddress);
+//                profilePhone.setText (userPhone);
 
                 Paper.book ().destroy ();
 
@@ -80,6 +118,20 @@ public class CustomerView extends AppCompatActivity
         TextView userEmailTextView = headerView.findViewById (R.id.textView);
 
 //        userNameTextView.setText (Prevalent.currentOnlineUser.getName());
+
+    }
+
+    private void showAllData() {
+        Intent intent = getIntent ();
+        String userName = intent.getStringExtra ("name");
+        String userEmail = intent.getStringExtra ("email");
+        String userAddress = intent.getStringExtra ("address");
+        String userPhone = intent.getStringExtra ("phone");
+
+        profileName.setText (userName);
+        profileEmail.setText (userEmail);
+        profileAddress.setText (userAddress);
+        profilePhone.setText (userPhone);
 
     }
 
