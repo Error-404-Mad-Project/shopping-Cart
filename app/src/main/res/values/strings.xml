@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Shopping Cart</string>
+    <string name="Massage_1">Description</string>
+    <string name="Button_1">Add Cart</string>
+    <string name="Button_2">Comment</string>
+    <string name="Massage_2">Description</string>
+    <string name="Massage_3">Description</string>
+    <string name="Massage_4">Description</string>
+    <string name="Massage_6">Description</string>
+    <string name="Massage_5">Description</string>
+    <string name="Massage_7">Description</string>
+    <string name="Massage_8">Description</string>
+    <string name="Massage_9">Description</string>
+    <string name="Button_3">Buy</string>
+    <string name="Button_4">Delete</string>
+    <string name="Button_5">View Place Order</string>
+    <string name="Edit_text_1">Qut</string>
+    <string name="Edit_text_2">Qut</string>
+    <string name="Edit_text_3">Qut</string>
+    <string name="Edit_text_4">Qut</string>
+    <string name="Edit_text_5">Qut</string>
+    <string name="Edit_text_6">Qut</string>
+    <string name="Edit_text_7">Qut</string>
+    <string name="Button_6">Confirm</string>
+    <string name="Button_7">Back</string>
+    <string name="text_1">order price</string>
+</resources>
