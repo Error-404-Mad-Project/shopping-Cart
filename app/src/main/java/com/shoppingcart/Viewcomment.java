@@ -1,30 +1,34 @@
 package com.shoppingcart;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class View extends AppCompatActivity {
+import com.rey.material.widget.LinearLayout;
+import com.rey.material.widget.RelativeLayout;
 
-    private static  Button button_write;
+public class Viewcomment extends AppCompatActivity {
+
+    private RecyclerView commentList;
+    private Button button_write;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view);
+        setContentView(R.layout.activity_viewcomment);
 
-
-
-
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-        onButtonClickListener();
-
+        commentList = (RecyclerView)findViewById(R.id.comment_List);
+        commentList.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        commentList.setLayoutManager(linearLayoutManager);
     }
 
     public void onButtonClickListener(){
@@ -39,32 +43,5 @@ public class View extends AppCompatActivity {
                 });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.menu_view,menu);
-        return true;
-    }
-
-
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        int id =item.getItemId();
-
-        if(id == R.id.action_settings){
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
-
-
-
-
 
 }
-
-

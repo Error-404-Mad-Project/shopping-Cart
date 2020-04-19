@@ -11,7 +11,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,7 +41,7 @@ public class RegistrationForm extends AppCompatActivity {
             // Do something in response to button
             Intent intent = new Intent (RegistrationForm.this,CustomerView.class);
 
-            EditText editText5 = (EditText) findViewById (R.id.editText5);
+            EditText editText5 = (EditText) findViewById (R.id.write_Text);
             EditText editText7 = (EditText) findViewById (R.id.editText7);
             EditText editText8 = (EditText) findViewById (R.id.editText8);
             EditText editText9 = (EditText) findViewById (R.id.editText9);
@@ -97,7 +96,7 @@ public class RegistrationForm extends AppCompatActivity {
 
     public void REGISTER(View view) {
 
-        EditText text = (EditText) findViewById(R.id.editText5);
+        EditText text = (EditText) findViewById(R.id.write_Text);
         String message = text.getText().toString();
 
         // Create an explicit intent for an Activity in your app
