@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class DeliveryActivityMain extends AppCompatActivity {
     private Button button;
@@ -31,5 +32,6 @@ public class DeliveryActivityMain extends AppCompatActivity {
             }
         });
 
+        Toast.makeText(DeliveryActivityMain.this, "firebase connection success",Toast.LENGTH_LONG).show();
     }
 }

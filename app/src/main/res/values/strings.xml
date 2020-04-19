@@ -62,4 +62,24 @@
     <string name="visa_card">Visa Card</string>
     <string name="cash_on_delivery">Cash On Delivery</string>
     <string name="choose_your_patment_method">Choose Your Patment Method</string>
+    <string name="you_must_enter_your_valid_address_now_in_live">You must enter your valid Address now in live.</string>
+    <string name="you_must_enter_your_valid_and_working_telephonenumber">You must enter your valid and working telephonenumber</string>
+    <string name="phone1">\@string/you_must_enter_your_valid_and_working_telephone number</string>
+    <string name="phoneqq">\@string/you_must_enter_your_valid_and_working_telephone number</string>
+    <string name="textview">TextView</string>
+    <string name="choose_your_payment_method">Choose Your Payment Method</string>
+    <string name="faq">FAQ</string>
+    <string name="you_must_enter_your_valid_and_working_telephone_number">You must enter your valid and working telephone number</string>
+    <string name="we_avoid_using_polythene_bags_then_you_have_to_pay_rs_5_00_for_one_paper_bag">We avoid using polythene bags.Then you have to pay Rs.5.00 for one paper bag.</string>
+    <string name="we_delivery_around_the_western_province_only_within_5km_in_narahenpita_town_delivery_fee_is_free_for_every_additionl_kilometer_add_rs_20">We delivery around the Western Province only. Within 5KM in Narahenpita town, delivery fee is free.For every additionl kilometer,add Rs.20</string>
+    <string name="you_can_select_your_delivery_vehicle_as_you_wish">You can select your delivery vehicle as you wish.</string>
+    <string name="when_we_arrive_your_home_you_can_pay_though_any_card_or_cash">When we arrive your home, you can pay though any card or cash.</string>
+    <string name="how_i_deliver_my_orders">How i deliver my orders?</string>
+    <string name="after_you_added_item_to_the_cart_you_should_fill_the_delivery_application_and_mark_the_delivery_vehicle_method">After you added item to the cart, You should fill the delivery application and mark the delivery vehicle,method.</string>
+    <string name="how_we_know_our_delivery_prices">How we know our delivery prices?</string>
+    <string name="any_vehicle_around_5_km_delivery_chargess_will_be_free_but_additional_each_1_km_we_will_charge_rs_20_for_bike_rs_30_for_threeweel_and_rs_40_for_van">Any vehicle, around 5 KM delivery chargess will be free.But additional each 1 KM we will charge Rs.20 for bike, Rs.30 for threeweel and Rs.40 for van.</string>
+    <string name="if_our_order_will_damage_how_we_return_it">If our order will damage, how we return it?</string>
+    <string name="you_should_call_our_hotline_and_tell_your_problem_we_will_take_a_action_for_that_matter_imediatly">You should call our hotline and tell your problem.We will take a action for that matter imediatly.</string>
+    <string name="if_our_both_address_and_telephone_number_will_be_wrong">If our both address and telephone number will be wrong?</string>
+    <string name="your_order_will_be_cancel_and_you_has_to_pay_it_s_delivery_fee_at_the_next_order_it_mean_when_you_order_next_time_that_delivery_fee_will_add">Your order will be cancel and you has to pay it\'s delivery fee at the next order.It mean when you order next time that delivery fee will add.</string>
 </resources>

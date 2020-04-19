@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FAQ"
+            android:parentActivityName=".Payment"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
+        <activity
             android:name=".ThankYou"
             android:parentActivityName=".Payment"
-            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
         <activity
             android:name=".Terms"
             android:parentActivityName=".Instructions"

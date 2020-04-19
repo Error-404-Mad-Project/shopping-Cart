@@ -13,6 +13,8 @@ import android.widget.*;
 public class Payment extends AppCompatActivity {
     private Button button;
     private Button backButton;
+    private TextView textView;
+
 
     private RadioGroup RadioGroupPhoto15;
     private ImageView imageViewphoto1;
@@ -55,7 +57,16 @@ public class Payment extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        textView=(TextView)findViewById(R.id.textView5);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Payment.this,FAQ.class);
+                startActivity(intent);
+                Toast.makeText(Payment.this,"Terms & Conditions",Toast.LENGTH_LONG).show();
 
+            }
+        });
 
 
     }

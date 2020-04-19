@@ -6,103 +6,96 @@
     android:layout_height="match_parent"
     tools:context=".Terms">
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="330dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/terms_conditions"
-        android:textColor="#3F51B5"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="370dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="600dp"
-        android:text="@string/real"
+        android:layout_marginBottom="620dp"
+        android:text="@string/you_must_enter_your_valid_address_now_in_live"
         android:textColor="#0B0A0A"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
-        app:layout_constraintStart_toStartOf="parent"
-          />
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="371dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/phone"
-        android:textColor="#101010"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="366dp"
-        android:layout_height="74dp"
-        android:scrollbarTrackHorizontal="@color/colorPrimaryDark"
-        android:scrollbarTrackVertical="@android:drawable/checkbox_on_background"
-        android:text="@string/bag"
-        android:textColor="#0B0A0A"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="363dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/confirm"
-        android:textColor="#0C0C0C"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="360dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="92dp"
-        android:text="@string/contact"
+        android:layout_width="367dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/you_must_enter_your_valid_and_working_telephone_number"
         android:textColor="#090909"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
         android:id="@+id/button12"
         android:layout_width="180dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="76dp"
         android:backgroundTint="#3F51B5"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.737"
         tools:targetApi="lollipop" />
 
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="379dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/we_avoid_using_polythene_bags_then_you_have_to_pay_rs_5_00_for_one_paper_bag"
+        android:textColor="#090909"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="369dp"
+        android:layout_height="91dp"
+
+        android:layout_marginTop="32dp"
+        android:text="@string/we_delivery_around_the_western_province_only_within_5km_in_narahenpita_town_delivery_fee_is_free_for_every_additionl_kilometer_add_rs_20"
+        android:textColor="#090909"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="355dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/you_can_select_your_delivery_vehicle_as_you_wish"
+        android:textColor="#090909"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
+        android:text="@string/when_we_arrive_your_home_you_can_pay_though_any_card_or_cash"
+        android:textColor="#0E0E0E"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/button12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.529" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
