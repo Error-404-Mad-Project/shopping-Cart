@@ -146,6 +146,7 @@ public class Login extends AppCompatActivity {
                                     intent.putExtra ("Email", usersData.getEmail ());
                                     intent.putExtra ("Address", usersData.getAddress ());
                                     intent.putExtra ("Phone", usersData.getPhone ());
+                                    Prevalent.currentOnlineUser = usersData;
                                     startActivity (intent);
                                 }
                                 else

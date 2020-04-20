@@ -2,7 +2,7 @@ package com.shoppingcart.Model;
 
 
 public class Users {
-    private String name, email, address, phone, password, confirm_pass;
+    private String name, email, address, phone, password, confirm_pass, image;
 
     public Users()
     {
@@ -57,13 +57,22 @@ public class Users {
         this.confirm_pass = confirm_pass;
     }
 
-    public Users(String name, String email , String address, String phone, String password, String confirm_pass) {
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Users(String name, String email , String address, String phone, String password, String confirm_pass, String image) {
         this.name = name;
         this.email = email;
         this.address = address;
         this.phone = phone;
         this.password = password;
         this.confirm_pass = confirm_pass;
+        this.image = image;
 
     }
 

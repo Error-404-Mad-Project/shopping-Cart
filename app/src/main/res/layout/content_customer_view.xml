@@ -127,20 +127,4 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19"
         app:layout_constraintVertical_bias="0.696" />
 
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginBottom="56dp"-->
-<!--        android:background="@drawable/button_border"-->
-<!--        android:text="@string/editBtn"-->
-<!--        android:textColor="#FFFFFF"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.498"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView20"-->
-<!--        app:layout_constraintVertical_bias="0.505"-->
-<!--        tools:ignore="MissingConstraints" />-->
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

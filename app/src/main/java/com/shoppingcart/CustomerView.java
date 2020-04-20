@@ -19,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.shoppingcart.Model.Users;
+import com.shoppingcart.Prevalent.Prevalent;
+import com.squareup.picasso.Picasso;
 //import com.shoppingcart.Prevalent.Prevalent;
 
 
@@ -35,7 +37,7 @@ import io.paperdb.Paper;
 public class CustomerView extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-//        private ImageView userProfilePic;
+        private ImageView userProfilePic;
         private TextView profileName, profileEmail, profileAddress, profilePhone;
         private FirebaseAuth firebaseAuth;
         private FirebaseDatabase firebaseDatabase;
@@ -43,6 +45,7 @@ public class CustomerView extends AppCompatActivity
         private String Email = "";
         private String Address = "";
         private String Phone = "";
+        private String checker = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,7 @@ public class CustomerView extends AppCompatActivity
 
 
         //Hooks
-//        userProfilePic = findViewById (R.id.profileImage);
+        userProfilePic = findViewById (R.id.profileImage);
         profileName = findViewById (R.id.textView17);
         profileEmail = findViewById (R.id.textView18);
         profileAddress = findViewById (R.id.textView19);
@@ -72,24 +75,6 @@ public class CustomerView extends AppCompatActivity
         firebaseDatabase = FirebaseDatabase.getInstance ();
 
         showAllData();
-
-//        DatabaseReference databaseReference = firebaseDatabase.getReference (firebaseAuth.getUid ());
-//
-//        databaseReference.addValueEventListener (new ValueEventListener () {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Users users = dataSnapshot.getValue (Users.class);
-//                profileName.setText (Users.getName ());
-//                profileEmail.setText (Users.getEmail ());
-//                profileAddress.setText (Users.getAddress ());
-//                profilePhone.setText (Users.getPhone());
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                Toast.makeText (CustomerView.this,databaseError.getCode (),Toast.LENGTH_SHORT).show ();
-//            }
-//        });
 
         Toolbar toolbar = findViewById (R.id.toolbar);
         toolbar.setTitle ("CustomerView");
@@ -100,11 +85,12 @@ public class CustomerView extends AppCompatActivity
 
             @Override
             public void onClick(View view) {
-
-                Paper.book ().destroy ();
-
-                Snackbar.make (view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction ("Action", null).show ();
+                Intent intent = new Intent (CustomerView.this, UpdateCustomer.class);
+                startActivity (intent);
+//                Paper.book ().destroy ();
+//
+//                Snackbar.make (view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction ("Action", null).show ();
                 // Get the Intent that started this activity and extract the string
             }
         });
@@ -120,17 +106,15 @@ public class CustomerView extends AppCompatActivity
         View headerView = navigationView.getHeaderView (0);
         TextView userNameTextView = headerView.findViewById (R.id.user_profile_name);
         TextView userEmailTextView = headerView.findViewById (R.id.textView);
+        ImageView ProfileImageView = headerView.findViewById (R.id.user_profile_image);
 
-//        userNameTextView.setText (Prevalent.currentOnlineUser.getName());
+        userNameTextView.setText (Prevalent.currentOnlineUser.getName());
+        userEmailTextView.setText (Prevalent.currentOnlineUser.getEmail ());
+        Picasso.get ().load (Prevalent.currentOnlineUser.getImage()).placeholder (R.drawable.person).into (userProfilePic);
 
     }
 
     private void showAllData() {
-//        Intent intent = new Intent (getApplicationContext (),RegistrationForm.class);
-//        String userName = intent.getStringExtra ("name");
-//        String userEmail = intent.getStringExtra ("email");
-//        String userAddress = intent.getStringExtra ("address");
-//        String userPhone = intent.getStringExtra ("phone");
 
         profileName.setText (Name);
         profileEmail.setText (Email);
