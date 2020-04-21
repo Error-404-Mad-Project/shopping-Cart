@@ -64,6 +64,12 @@ public class UpdateCustomer extends AppCompatActivity {
         profileChangeTextBtn = (TextView) findViewById (R.id.textView28);
         mButtonSave = (Button) findViewById (R.id.button7);
 
+        if (getActionBar () != null )
+        {
+            getSupportActionBar ().setTitle ("Update Details");
+            getSupportActionBar ().setDisplayHomeAsUpEnabled (true);
+        }
+
         userInfoDisplay (imageView, profileName, profileEmail, profileAddress, profilePhone);
 
         mButtonSave.setOnClickListener (new View.OnClickListener () {

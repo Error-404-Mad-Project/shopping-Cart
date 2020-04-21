@@ -70,6 +70,12 @@ public class RegistrationForm extends AppCompatActivity {
         loadingBar = new ProgressDialog (this);
         nextPage = (Button) findViewById (R.id.button);
 
+        if (getActionBar () != null )
+        {
+            getSupportActionBar ().setTitle ("REGISTER");
+            getSupportActionBar ().setDisplayHomeAsUpEnabled (true);
+        }
+
 
         nextPage.setOnClickListener (new View.OnClickListener () {
             /**

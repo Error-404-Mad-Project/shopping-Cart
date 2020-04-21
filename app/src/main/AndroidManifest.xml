@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConfirmFinalOrderActivity"></activity>
+        <activity android:name=".ProductDetailsActivity"></activity>
+        <activity android:name=".CartActivity" />
+        <activity android:name=".ConfirmFinalOrderActivity" />
         <activity android:name=".UpdateCustomer" />
         <activity android:name=".ForgotPassword" />
         <activity
@@ -20,7 +22,10 @@
             android:label="@string/title_activity_customer_view"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ConfirmPassword" />
-        <activity android:name=".RegistrationForm" />
+        <activity android:name=".RegistrationForm"
+                  android:parentActivityName=".Login"
+                  android:theme="@style/Theme.MaterialComponents.Light.Bridge"
+            />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity">
             <intent-filter>
