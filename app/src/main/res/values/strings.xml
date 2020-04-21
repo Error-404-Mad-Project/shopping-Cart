@@ -61,6 +61,8 @@
     <string name="editBtn">EDIT</string>
     <string name="profileChange">Change Profile</string>
     <string name="saveButton">SAVE</string>
+    <string name="Text1">"By Continuing,you accept the "</string>
+    <string name="Text2">Terms and Conditions and Privacy Policy</string>
 
 
 </resources>

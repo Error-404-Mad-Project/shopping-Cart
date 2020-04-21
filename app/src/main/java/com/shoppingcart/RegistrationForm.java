@@ -75,6 +75,23 @@ public class RegistrationForm extends AppCompatActivity {
             /**
              * Called when the user taps the Register button
              */
+
+            @Override
+            public void onClick(View v) {
+
+                validateUsername ();
+                validateEmail ();
+                validatePassword ();
+                CreateAccount ();
+                validateAddress ();
+                validatePhone ();
+
+            }
+
+            /**
+             * Validate the UserName
+             */
+
             private boolean validateUsername() {
                 String usernameInput = userName.getText ().toString ().trim ();
 
@@ -90,29 +107,9 @@ public class RegistrationForm extends AppCompatActivity {
                 }
             }
 
-            @Override
-            public void onClick(View v) {
-                CreateAccount ();
-                // Do something in response to button
-                Intent LoginIntent = new Intent (RegistrationForm.this, Login.class);
-
-                EditText editText5 = (EditText) findViewById (R.id.editText5);
-                EditText editText7 = (EditText) findViewById (R.id.editText7);
-                EditText editText8 = (EditText) findViewById (R.id.editText8);
-                EditText editText9 = (EditText) findViewById (R.id.editText9);
-
-                String message = editText5.getText ().toString ();
-                String message1 = editText7.getText ().toString ();
-                String message2 = editText8.getText ().toString ();
-                String message3 = editText9.getText ().toString ();
-
-                LoginIntent.putExtra (EXTRA_MESSAGE, message);
-                LoginIntent.putExtra (EXTRA_MESSAGE1, message1);
-                LoginIntent.putExtra (EXTRA_MESSAGE2, message2);
-                LoginIntent.putExtra (EXTRA_MESSAGE3, message3);
-                startActivity (LoginIntent);
-
-            }
+            /**
+             * Validate the Email
+             */
 
             private boolean validateEmail() {
                 String emailInput = emailAddress.getText ().toString ().trim ();
@@ -129,6 +126,10 @@ public class RegistrationForm extends AppCompatActivity {
                 }
             }
 
+            /**
+             * Validate the Password
+             */
+
             private boolean validatePassword() {
                 String passwordInput = password.getText ().toString ().trim ();
 
@@ -138,13 +139,49 @@ public class RegistrationForm extends AppCompatActivity {
                 } else if (!PASSWORD_PATTERN.matcher (passwordInput).matches ()) {
                     password.setError ("Password too weak");
                     return false;
-                } else {
+                }
+                else {
                     password.setError (null);
+                    return true;
+                }
+            }
+
+            /**
+             * Validate the Address
+             */
+
+            private boolean validateAddress() {
+                String addressInput = address.getText ().toString ().trim ();
+
+                if (addressInput.isEmpty ()) {
+                    address.setError ("Field can't be empty");
+                    return false;
+                }
+                else {
+                    address.setError (null);
+                    return true;
+                }
+            }
+
+            /**
+             * Validate the Address
+             */
+
+            private boolean validatePhone() {
+                String phoneNumberInput = phoneNumber.getText ().toString ().trim ();
+
+                if (phoneNumberInput.isEmpty ()) {
+                    phoneNumber.setError ("Field can't be empty");
+                    return false;
+                }
+                else {
+                    phoneNumber.setError (null);
                     return true;
                 }
             }
         });
     }
+
 
     public void CreateAccount() {
         String name = userName.getText ().toString ();
@@ -164,7 +201,10 @@ public class RegistrationForm extends AppCompatActivity {
             Toast.makeText (this, "Please enter your address..", Toast.LENGTH_SHORT).show ();
         } else if (TextUtils.isEmpty (number)) {
             Toast.makeText (this, "Please enter your phone number..", Toast.LENGTH_SHORT).show ();
-        } else {
+        } else if (TextUtils.isEmpty (pwd) && pwd != cnf_pwd) {
+            Toast.makeText (this, "Recheck your password..", Toast.LENGTH_SHORT).show ();
+        }
+        else {
             /**Create Loading Bar**/
             loadingBar.setTitle ("Create Account");
             loadingBar.setMessage ("Please wait, while we are checking the credentials");

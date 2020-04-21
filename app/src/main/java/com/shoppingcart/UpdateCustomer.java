@@ -188,8 +188,8 @@ public class UpdateCustomer extends AppCompatActivity {
                 {
                     if (task.isSuccessful ())
                     {
-                        Uri downloadURL = task.getResult ();
-                        myUrl = downloadURL.toString ();
+                        Uri downloadUrl = task.getResult ();
+                        myUrl = downloadUrl.toString ();
 
                         DatabaseReference reference = FirebaseDatabase.getInstance ().getReference ().child ("Users");
 
@@ -221,7 +221,7 @@ public class UpdateCustomer extends AppCompatActivity {
         }
     }
 
-    private void userInfoDisplay(final ImageView imageView, final TextView profileName, final TextView profileEmail, final TextView profileAddress, final TextView profilePhone)
+    private void userInfoDisplay(final ImageView imageView, final EditText profileName, final EditText profileEmail, final EditText profileAddress, final EditText profilePhone)
     {
         DatabaseReference UsersRef = FirebaseDatabase.getInstance ().getReference ().child ("Users").child (Prevalent.currentOnlineUser.getName ());
 

@@ -63,8 +63,6 @@ public class CustomerView extends AppCompatActivity
             Phone = getIntent().getExtras().get( "Phone" ).toString();
         }
 
-
-
         //Hooks
         userProfilePic = findViewById (R.id.profileImage);
         profileName = findViewById (R.id.textView17);
