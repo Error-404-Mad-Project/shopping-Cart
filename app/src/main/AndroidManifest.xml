@@ -12,23 +12,23 @@
         <activity
             android:name=".FAQ"
             android:parentActivityName=".Payment"
-            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.Bridge" />
         <activity
             android:name=".ThankYou"
             android:parentActivityName=".Payment"
-            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.Bridge" />
         <activity
             android:name=".Terms"
             android:parentActivityName=".Instructions"
-            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.Bridge" />
         <activity
             android:name=".Payment"
             android:parentActivityName=".Instructions"
-            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.Bridge" />
         <activity
             android:name=".Instructions"
             android:parentActivityName=".DeliveryActivityMain"
-            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
+            android:theme="@style/Theme.MaterialComponents.Light.Bridge" />
         <activity android:name=".DeliveryActivityMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
