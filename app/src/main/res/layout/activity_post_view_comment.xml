@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Viewcomment">
+    tools:context=".PostViewComment">
 
     <TextView
         android:id="@+id/textView"
@@ -22,41 +22,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
-    <!--<LinearLayout
-        android:layout_width="400dp"
-        android:layout_height="60dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="458dp"
-        android:background="@android:color/darker_gray"
-        android:orientation="vertical"
-        android:backgroundTint="@color/browser_actions_bg_grey">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="44dp"
-            android:layout_marginBottom="549dp"
-            android:orientation="horizontal"
-            android:padding="5dp"
-            android:background="@drawable/background">
--->
-
-    <!-- </LinearLayout>
- </LinearLayout>-->
-
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/comment_List"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="482dp"
         android:layout_alignParentStart="true"
@@ -88,8 +55,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.9" />
-
-
 
 
 </RelativeLayout>
