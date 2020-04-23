@@ -14,8 +14,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="242dp"
-        android:layout_height="62dp"
+        android:layout_width="245dp"
+        android:layout_height="44dp"
         android:layout_marginTop="32dp"
         android:scrollbarTrackHorizontal="?attr/actionModePasteDrawable"
         android:text="@string/detail"
@@ -137,8 +137,9 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="200dp"
+        android:layout_width="180dp"
         android:layout_height="54dp"
+        android:backgroundTint="#3F51B5"
         android:text="@string/next"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColorLink="#4CAF50"
@@ -146,14 +147,30 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4"
-        app:layout_constraintVertical_bias="0.405"
+        app:layout_constraintVertical_bias="0.542"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="180dp"
+        android:layout_height="54dp"
         android:backgroundTint="#3F51B5"
+        android:text="@string/delete"
+        android:textColorLink="#4CAF50"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        app:layout_constraintVertical_bias="0.542"
         tools:targetApi="lollipop" />
 
 
-<!--    <ImageButton-->
+    <!--    <ImageButton-->
 <!--        android:id="@+id/imageButton2"-->
 <!--        android:layout_width="78dp"-->
 <!--        android:layout_height="72dp"-->

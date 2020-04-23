@@ -28,6 +28,7 @@ import java.util.jar.Attributes;
 
 public class DeliveryActivityMain extends AppCompatActivity {
     private Button button;
+    private Button deleteButton;
     private EditText Name, Address, Telephone_Number, Email;
     private ProgressDialog loadingBar;
 
@@ -139,6 +140,24 @@ public class DeliveryActivityMain extends AppCompatActivity {
 
             }
         });
+
+        deleteButton = (Button) findViewById(R.id.button2);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DeliveryActivityMain.this,  DeliveryActivityMain.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
+
+
+
     }
 }
 

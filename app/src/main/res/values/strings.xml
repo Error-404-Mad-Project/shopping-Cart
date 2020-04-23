@@ -82,4 +82,5 @@
     <string name="you_should_call_our_hotline_and_tell_your_problem_we_will_take_a_action_for_that_matter_imediatly">You should call our hotline and tell your problem.We will take a action for that matter imediatly.</string>
     <string name="if_our_both_address_and_telephone_number_will_be_wrong">If our both address and telephone number will be wrong?</string>
     <string name="your_order_will_be_cancel_and_you_has_to_pay_it_s_delivery_fee_at_the_next_order_it_mean_when_you_order_next_time_that_delivery_fee_will_add">Your order will be cancel and you has to pay it\'s delivery fee at the next order.It mean when you order next time that delivery fee will add.</string>
+    <string name="delete">Delete</string>
 </resources>
