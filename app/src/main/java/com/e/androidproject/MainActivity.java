@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void nextFunction(View view)
     {
-            Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+            Intent intent = new Intent(MainActivity.this,Home2Activity.class);
             startActivity(intent);
     }
    // Write a message to the database
