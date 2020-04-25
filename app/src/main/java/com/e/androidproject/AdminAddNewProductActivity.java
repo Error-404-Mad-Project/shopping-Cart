@@ -138,7 +138,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
         Calendar calendar = Calendar.getInstance();
 
-        SimpleDateFormat currentDate = new SimpleDateFormat("MMM D YYYY");
+        SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, YYYY");
         saveCurrentDate = currentDate.format(calendar.getTime());
 
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
