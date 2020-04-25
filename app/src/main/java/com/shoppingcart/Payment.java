@@ -63,7 +63,7 @@ public class Payment extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(Payment.this,FAQ.class);
                 startActivity(intent);
-                Toast.makeText(Payment.this,"Terms & Conditions",Toast.LENGTH_LONG).show();
+                Toast.makeText(Payment.this,"FAQ",Toast.LENGTH_LONG).show();
 
             }
         });

@@ -60,19 +60,19 @@ public class DeliveryActivityMain extends AppCompatActivity {
 
         if (TextUtils.isEmpty(name))
             {
-                    Toast.makeText(this,"please write your name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"please enter your name", Toast.LENGTH_SHORT).show();
             }
        else if (TextUtils.isEmpty(address))
             {
-                    Toast.makeText(this,"please write your address", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"please enter your address", Toast.LENGTH_SHORT).show();
             }
        else if (TextUtils.isEmpty(telephone_number))
             {
-                    Toast.makeText(this,"please write your phone number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"please enter your phone number", Toast.LENGTH_SHORT).show();
             }
        else if (TextUtils.isEmpty(email))
             {
-                    Toast.makeText(this,"please write your email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"please enter your email", Toast.LENGTH_SHORT).show();
             }
        else
             {
@@ -149,7 +149,6 @@ public class DeliveryActivityMain extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
 
 
