@@ -141,7 +141,7 @@ public class Login extends AppCompatActivity {
                                     Toast.makeText (Login.this,"Logged in Successfully.",Toast.LENGTH_SHORT).show ();
                                     loadingBar.dismiss ();
 
-                                    Intent intent = new Intent (Login.this,CustomerView.class);
+                                    Intent intent = new Intent (Login.this,HomeActivity.class);
                                     intent.putExtra ("UserName", usersData.getName ());
                                     intent.putExtra ("Email", usersData.getEmail ());
                                     intent.putExtra ("Address", usersData.getAddress ());

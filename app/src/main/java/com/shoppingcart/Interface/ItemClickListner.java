@@ -2,9 +2,7 @@ package com.shoppingcart.Interface;
 
 import android.view.View;
 
-public class ItemClickListner
+public interface ItemClickListner
 {
-    public void onClick(View view, int position, boolean isLongClick) {
-
-    }
+    void onClick(View view, int position, boolean isLongClick);
 }
