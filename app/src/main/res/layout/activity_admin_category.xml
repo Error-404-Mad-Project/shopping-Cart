@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminCategory">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/category"
+    android:textStyle="bold"
+    android:textColor="@color/design_default_color_primary_dark"
+    android:layout_marginTop="27dp"
+    android:text="Add new product"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/Linier1"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="15dp">
+        
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/vegitable"
+            android:src="@drawable/vegi"/>
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/animalProduct"
+            android:src="@drawable/animal_products_2"
+            />
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/cleaningItems"
+            android:src="@drawable/cleanig_1"/>
+
+
+
+
+
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/Linier2"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="100dp">
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/plastic"
+            android:src="@drawable/plastic"/>
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/stationary"
+            android:src="@drawable/stationary"/>
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/beauty"
+            android:src="@drawable/beauty_items_1"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/Linier3"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="200dp">
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/mechanikal"
+            android:src="@drawable/mecanical"/>
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/grosery"
+            android:src="@drawable/grosery_1"/>
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/grains"
+            android:src="@drawable/grains_1"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open add post"/>
+
+
+
+
+</RelativeLayout>

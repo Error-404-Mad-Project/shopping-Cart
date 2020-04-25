@@ -26,6 +26,7 @@
         android:textColorHint="@color/design_default_color_primary"
         android:textSize="15dp"
         android:layout_marginTop="100dp"
+
         android:layout_marginBottom="20dp"
         android:textStyle="bold"
         android:textColor="@color/design_default_color_primary_dark" />
@@ -85,7 +86,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-    <TextView
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="I'm not admin ?"
@@ -107,9 +108,29 @@
         android:textSize="16sp"
         android:textColor="@color/design_default_color_primary_dark"
 
-        android:id="@+id/admin_panal_link"/>
-    />
+        android:id="@+id/admin_panal_link"/>-->
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notadmin"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        android:text="Admin"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_border"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/admin"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        android:text="Admin"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_border"/>
 
 
 

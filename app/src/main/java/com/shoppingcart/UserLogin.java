@@ -24,11 +24,11 @@ import com.shoppingcart.models.Users;
 
 public class UserLogin extends AppCompatActivity {
 
-    private Button loginButton;
+    private Button loginButton,admin,notadmin;
     private EditText InputName;
     private ProgressDialog loadingBar;
 
-    private TextView AdminLink,NotAdminLink;
+   // private TextView AdminLink,NotAdminLink;
 
     private String parentDbName = "Users";
 
@@ -39,8 +39,10 @@ public class UserLogin extends AppCompatActivity {
 
         loginButton = (Button) findViewById(R.id.login);
         InputName =(EditText)findViewById(R.id.uName);
-        AdminLink = (TextView) findViewById(R.id.admin_panal_link);
-        NotAdminLink =(TextView)findViewById(R.id.not_admin_panal_link);
+       // AdminLink = (TextView) findViewById(R.id.admin_panal_link);
+        //NotAdminLink =(TextView)findViewById(R.id.not_admin_panal_link);
+        admin = (Button) findViewById(R.id.admin);
+        notadmin =(Button)findViewById(R.id.notadmin);
 
         loadingBar =new ProgressDialog(this);
 
@@ -52,7 +54,7 @@ public class UserLogin extends AppCompatActivity {
             }
         });
 
-        AdminLink.setOnClickListener(new View.OnClickListener() {
+     /*   AdminLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginButton.setText("Login Admin");
@@ -70,7 +72,27 @@ public class UserLogin extends AppCompatActivity {
                 NotAdminLink.setVisibility(View.INVISIBLE);
                 parentDbName ="Users";
             }
-        });
+        });*/
+
+     admin.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             loginButton.setText("Login Admin");
+             admin.setVisibility(View.INVISIBLE);
+            notadmin.setVisibility(View.VISIBLE);
+             parentDbName ="Admin";
+         }
+     });
+
+     notadmin.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+             loginButton.setText("Login");
+             admin.setVisibility(View.VISIBLE);
+             notadmin.setVisibility(View.INVISIBLE);
+             parentDbName ="Users";
+         }
+     });
 
     }
 
@@ -116,15 +138,15 @@ public class UserLogin extends AppCompatActivity {
                         startActivity(intent);*/
 
                        //then do separeate admin or user
-                        if(parentDbName.equals("Admins ")){
-                            Toast.makeText(UserLogin.this,"Login successs full..",Toast.LENGTH_SHORT).show();
+                        if(parentDbName.equals("Admin ")){
+                            Toast.makeText(UserLogin.this,"Welcome Admin,Login success full..",Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
 
-                            Intent intent = new Intent(UserLogin.this,HomeActivity.class);
+                            Intent intent = new Intent(UserLogin.this,AdminCategory.class);
                             startActivity(intent);
                         }
                         else if(parentDbName.equals("Users")) {
-                            Toast.makeText(UserLogin.this,"Login successs full..",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UserLogin.this,"Login success full..",Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
 
                             Intent intent = new Intent(UserLogin.this,HomeActivity.class);
