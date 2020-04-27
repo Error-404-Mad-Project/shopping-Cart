@@ -1,100 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdminAddNewProductActivity">
 
-    <TextView
-        android:id="@+id/slogan_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+    <ImageView
+        android:id="@+id/Select_product_image"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        android:src="@drawable/productimage"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
-        android:text="Add New Product"
-        android:textAlignment="center"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal" />
+        android:layout_marginTop="80dp" />
 
-    <LinearLayout
-        android:id="@+id/linear1_category_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/slogan_category"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_marginTop="50dp">
+    <EditText
+        android:id="@+id/product_name"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/Select_product_image"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/edit_text_border"
+        android:hint="Product Name"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:textSize="16dp" />
 
-        <ImageView
-            android:id="@+id/vegetables"
-            android:layout_width="206dp"
-            android:layout_height="80dp"
-            android:src="@drawable/vegetable"
-            />
+    <Button
+        android:id="@+id/add_new_product"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/product_price"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/button_border"
+        android:text="Add Product"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16dp" />
 
+    <EditText
+        android:id="@+id/product_price"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/product_description"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/edit_text_border"
+        android:hint="Product Price"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:textSize="16dp" />
 
-        <ImageView
-            android:id="@+id/fruits"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/fruititem"
-            />
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/linear2_category_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linear1_category_layout"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_marginTop="50dp">
-
-        <ImageView
-            android:id="@+id/milk_products"
-            android:layout_width="206dp"
-            android:layout_height="80dp"
-            android:src="@drawable/milkproduct"
-            />
-
-        <ImageView
-            android:id="@+id/drink_items"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/drinkitem"
-            />
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/linear3_category_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linear2_category_layout"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_marginTop="50dp">
-
-        <ImageView
-            android:id="@+id/food_item"
-            android:layout_width="206dp"
-            android:layout_height="80dp"
-            android:src="@drawable/fooditem"
-            />
-
-        <ImageView
-            android:id="@+id/household"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/household"
-            />
-
-    </LinearLayout>
+    <EditText
+        android:id="@+id/product_description"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/product_name"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/edit_text_border"
+        android:hint="Product Description"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:textSize="16dp" />
 
 
 </RelativeLayout>

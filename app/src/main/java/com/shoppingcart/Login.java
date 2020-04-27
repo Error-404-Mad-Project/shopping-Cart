@@ -32,7 +32,7 @@ import io.paperdb.Paper;
 public class Login extends AppCompatActivity {
 
     private EditText mTextUsername, mTextPassword;
-    private TextView mTextForgotPassword;
+    private TextView mTextForgotPassword, AdminLink, NotAdminLink;
     private Button mButtonRegister, mButtonLogin;
     private ProgressDialog loadingBar;
 
@@ -47,6 +47,8 @@ public class Login extends AppCompatActivity {
         mTextUsername = (EditText) findViewById (R.id.editText);
         mTextPassword = (EditText) findViewById (R.id.editText3);
         mTextForgotPassword = (TextView) findViewById (R.id.textView23);
+        AdminLink = (TextView) findViewById (R.id.admin_panel_link);
+        NotAdminLink = (TextView) findViewById (R.id.not_admin_panel_link);
         mButtonRegister = (Button) findViewById (R.id.button3);
         mButtonLogin = (Button) findViewById (R.id.button4);
 
@@ -86,6 +88,28 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 LoginUser ();
+            }
+        });
+
+        AdminLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                mButtonLogin.setText("Login Admin");
+                AdminLink.setVisibility(View.INVISIBLE);
+                NotAdminLink.setVisibility(View.VISIBLE);
+                parentDbName = "Admins";
+            }
+        });
+
+        NotAdminLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                mButtonLogin.setText("Login");
+                AdminLink.setVisibility(View.VISIBLE);
+                NotAdminLink.setVisibility(View.INVISIBLE);
+                parentDbName = "Users";
             }
         });
 
@@ -138,16 +162,35 @@ public class Login extends AppCompatActivity {
                             {
                                 if (usersData.getPassword ().equals (password))
                                 {
-                                    Toast.makeText (Login.this,"Logged in Successfully.",Toast.LENGTH_SHORT).show ();
-                                    loadingBar.dismiss ();
+                                    if (parentDbName.equals("Admins"))
+                                    {
+                                        Toast.makeText(Login.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                        loadingBar.dismiss();
 
-                                    Intent intent = new Intent (Login.this,HomeActivity.class);
-                                    intent.putExtra ("UserName", usersData.getName ());
-                                    intent.putExtra ("Email", usersData.getEmail ());
-                                    intent.putExtra ("Address", usersData.getAddress ());
-                                    intent.putExtra ("Phone", usersData.getPhone ());
-                                    Prevalent.currentOnlineUser = usersData;
-                                    startActivity (intent);
+                                        Intent intent = new Intent(Login.this, AdminCategoryActivity.class);
+                                        startActivity(intent);
+                                    }
+                                    else if (parentDbName.equals("Users"))
+                                    {
+                                        Toast.makeText(Login.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                        loadingBar.dismiss();
+
+                                        Intent intent = new Intent(Login.this, HomeActivity.class);
+                                        Prevalent.currentOnlineUser = usersData;
+                                        startActivity(intent);
+                                    }
+
+
+//                                    Toast.makeText (Login.this,"Logged in Successfully.",Toast.LENGTH_SHORT).show ();
+//                                    loadingBar.dismiss ();
+//
+//                                    Intent intent = new Intent (Login.this,HomeActivity.class);
+//                                    intent.putExtra ("UserName", usersData.getName ());
+//                                    intent.putExtra ("Email", usersData.getEmail ());
+//                                    intent.putExtra ("Address", usersData.getAddress ());
+//                                    intent.putExtra ("Phone", usersData.getPhone ());
+//                                    Prevalent.currentOnlineUser = usersData;
+//                                    startActivity (intent);
                                 }
                                 else
                                 {
