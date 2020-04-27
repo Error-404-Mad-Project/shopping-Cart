@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminAddNewProductActivity">
+
+    <TextView
+        android:id="@+id/slogan_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Add New Product"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
+
+    <LinearLayout
+        android:id="@+id/linear1_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slogan_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/vegetables"
+            android:layout_width="206dp"
+            android:layout_height="80dp"
+            android:src="@drawable/vegetable"
+            />
+
+
+        <ImageView
+            android:id="@+id/fruits"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/fruititem"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear2_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear1_category_layout"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/milk_products"
+            android:layout_width="206dp"
+            android:layout_height="80dp"
+            android:src="@drawable/milkproduct"
+            />
+
+        <ImageView
+            android:id="@+id/drink_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/drinkitem"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear3_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear2_category_layout"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/food_item"
+            android:layout_width="206dp"
+            android:layout_height="80dp"
+            android:src="@drawable/fooditem"
+            />
+
+        <ImageView
+            android:id="@+id/household"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/household"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

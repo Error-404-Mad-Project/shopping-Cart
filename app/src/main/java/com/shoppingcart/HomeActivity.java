@@ -36,7 +36,7 @@ import io.paperdb.Paper;
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ImageView userProfilePic;
+//    private ImageView userProfilePic;
     private DatabaseReference ProductsRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -48,7 +48,7 @@ public class HomeActivity extends AppCompatActivity
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_home);
 
-        userProfilePic = findViewById (R.id.profileImage);
+//        userProfilePic = findViewById (R.id.profileImage);
 
         ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
@@ -80,11 +80,11 @@ public class HomeActivity extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         TextView userNameTextView = headerView.findViewById (R.id.user_profile_name);
         TextView userEmailTextView = headerView.findViewById (R.id.textView);
-        ImageView ProfileImageView = headerView.findViewById (R.id.user_profile_image);
+//        ImageView ProfileImageView = headerView.findViewById (R.id.user_profile_image);
 
         userNameTextView.setText (Prevalent.currentOnlineUser.getName());
         userEmailTextView.setText (Prevalent.currentOnlineUser.getEmail ());
-        Picasso.get ().load (Prevalent.currentOnlineUser.getImage()).placeholder (R.drawable.person).into (userProfilePic);
+//        Picasso.get ().load (Prevalent.currentOnlineUser.getImage()).placeholder (R.drawable.person).into (userProfilePic);
 
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
@@ -181,7 +181,7 @@ public class HomeActivity extends AppCompatActivity
             {
                 Paper.book().destroy();
 
-                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                Intent intent = new Intent(HomeActivity.this, Login.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();

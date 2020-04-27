@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminCategoryActivity">
+
+    <TextView
+        android:id="@+id/slogan_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Add New Product"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
+
+    <LinearLayout
+        android:id="@+id/linear1_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slogan_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+
+        <ImageView
+            android:id="@+id/vegetables"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/carrot"
+            />
+
+
+        <ImageView
+            android:id="@+id/potato"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/potato"
+            />
+
+        <ImageView
+            android:id="@+id/redOnion"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/onion"
+            />
+
+        <ImageView
+            android:id="@+id/chilli"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/chilli"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear2_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear1_category_layout"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/fruits"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/mango"
+            />
+
+        <ImageView
+            android:id="@+id/grapes"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/grapes"
+            />
+
+        <ImageView
+            android:id="@+id/banana"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/banana"
+            />
+
+        <ImageView
+            android:id="@+id/papaya"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/papaya"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear3_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear2_category_layout"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/food_item"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/kottumee1"
+            />
+
+        <ImageView
+            android:id="@+id/household"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/kottumee2"
+            />
+
+        <ImageView
+            android:id="@+id/butter"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@drawable/butter"
+            />
+
+        <ImageView
+            android:id="@+id/cheese"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/cheese"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
