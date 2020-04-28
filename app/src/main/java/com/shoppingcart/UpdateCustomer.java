@@ -63,12 +63,12 @@ public class UpdateCustomer extends AppCompatActivity {
         profilePhone = (EditText) findViewById (R.id.editText18);
         profileChangeTextBtn = (TextView) findViewById (R.id.textView28);
         mButtonSave = (Button) findViewById (R.id.button7);
-
-        if (getActionBar () != null )
-        {
-            getSupportActionBar ().setTitle ("Update Details");
-            getSupportActionBar ().setDisplayHomeAsUpEnabled (true);
-        }
+//
+//        if (getActionBar () != null )
+//        {
+//            getSupportActionBar ().setTitle ("Update Details");
+//            getSupportActionBar ().setDisplayHomeAsUpEnabled (true);
+//        }
 
         userInfoDisplay (imageView, profileName, profileEmail, profileAddress, profilePhone);
 
@@ -112,7 +112,7 @@ public class UpdateCustomer extends AppCompatActivity {
         userMap.put ("phone",profilePhone.getText ().toString ());
         reference.child (Prevalent.currentOnlineUser.getName ()).updateChildren (userMap);
 
-        startActivity (new Intent (UpdateCustomer.this,Login.class));
+        startActivity (new Intent (UpdateCustomer.this,HomeActivity.class));
         Toast.makeText (UpdateCustomer.this,"Profile Update Successfully.",Toast.LENGTH_SHORT).show ();
         finish ();
     }
@@ -131,7 +131,7 @@ public class UpdateCustomer extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText (UpdateCustomer.this,"Sorry, Please try again.",Toast.LENGTH_SHORT).show ();
+            Toast.makeText (this,"Sorry, Please try again.",Toast.LENGTH_SHORT).show ();
             startActivity (new Intent (UpdateCustomer.this,UpdateCustomer.class));
             finish ();
         }
@@ -141,19 +141,19 @@ public class UpdateCustomer extends AppCompatActivity {
     {
         if (TextUtils.isEmpty (profileName.getText ().toString ()))
         {
-            Toast.makeText (UpdateCustomer.this,"Name is mandatory.",Toast.LENGTH_SHORT).show ();
+            Toast.makeText (this,"Name is mandatory.",Toast.LENGTH_SHORT).show ();
         }
         else if (TextUtils.isEmpty (profileEmail.getText ().toString ()))
         {
-            Toast.makeText (UpdateCustomer.this,"Email is mandatory.",Toast.LENGTH_SHORT).show ();
+            Toast.makeText (this,"Email is mandatory.",Toast.LENGTH_SHORT).show ();
         }
         else if (TextUtils.isEmpty (profileAddress.getText ().toString ()))
         {
-            Toast.makeText (UpdateCustomer.this,"Address is mandatory.",Toast.LENGTH_SHORT).show ();
+            Toast.makeText (this,"Address is mandatory.",Toast.LENGTH_SHORT).show ();
         }
         else if (TextUtils.isEmpty (profilePhone.getText ().toString ()))
         {
-            Toast.makeText (UpdateCustomer.this,"Phone is mandatory.",Toast.LENGTH_SHORT).show ();
+            Toast.makeText (this,"Phone is mandatory.",Toast.LENGTH_SHORT).show ();
         }
         else if (checker.equals ("clicked"))
         {
@@ -172,7 +172,7 @@ public class UpdateCustomer extends AppCompatActivity {
         if (imageUri != null)
         {
             final StorageReference fileRef = storageProfilePictureRef
-                    .child (Prevalent.currentOnlineUser.getName () + ".jpg");
+                    .child (Prevalent.currentOnlineUser.getName() + ".jpg");
 
             uploadTask = fileRef.putFile (imageUri);
 
@@ -209,7 +209,7 @@ public class UpdateCustomer extends AppCompatActivity {
 
                         progressDialog.dismiss ();
 
-                        startActivity (new Intent (UpdateCustomer.this,Login.class));
+                        startActivity (new Intent (UpdateCustomer.this,HomeActivity.class));
                         Toast.makeText (UpdateCustomer.this,"Profile Update Successfully.",Toast.LENGTH_SHORT).show ();
                         finish ();
                     }
@@ -223,7 +223,7 @@ public class UpdateCustomer extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText (UpdateCustomer.this,"Image is not selected.",Toast.LENGTH_SHORT).show ();
+            Toast.makeText (this,"Image is not selected.",Toast.LENGTH_SHORT).show ();
         }
     }
 

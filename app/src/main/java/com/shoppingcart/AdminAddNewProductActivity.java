@@ -33,7 +33,7 @@ import java.util.HashMap;
 public class AdminAddNewProductActivity extends AppCompatActivity {
 
     private String CategoryName, Description, Price, pName, saveCurrentDate, saveCurrentTime;
-    private Button AddNewProductButton;
+    private Button AddNewProductButton, UpdateProductButton;
     private ImageView InputProductImage;
     private EditText InputProductName, InputProductDescription, InputProductPrice;
     private static final int GalleryPick = 1;
@@ -49,11 +49,16 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         setContentView (R.layout.activity_admin_add_new_product);
 
         CategoryName = getIntent().getExtras().get("category").toString();
+
+
+        Toast.makeText (this,CategoryName,Toast.LENGTH_SHORT).show ();
+
         ProductImagesRef = FirebaseStorage.getInstance().getReference().child("Product Images");
         ProductRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
 
         AddNewProductButton = (Button) findViewById(R.id.add_new_product);
+        UpdateProductButton = (Button) findViewById(R.id.update_product);
         InputProductImage = (ImageView) findViewById(R.id.Select_product_image);
         InputProductName = (EditText) findViewById(R.id.product_name);
         InputProductDescription = (EditText) findViewById(R.id.product_description);
@@ -81,6 +86,15 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 ValidateProductData();
+            }
+        });
+
+        UpdateProductButton.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (AdminAddNewProductActivity.this, UpdateProductActivity.class);
+                startActivity (intent);
+
             }
         });
 
@@ -160,7 +174,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             public void onFailure(@NonNull Exception e)
             {
                 String message = e.toString();
-                Toast.makeText(AdminAddNewProductActivity.this, "Error:" +message,Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminAddNewProductActivity.this, "Error: " + message,Toast.LENGTH_SHORT).show();
                 loadingBar.dismiss();
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot> () {

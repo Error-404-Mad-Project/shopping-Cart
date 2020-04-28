@@ -14,7 +14,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/productimage"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp" />
+        android:layout_marginTop="20dp" />
 
     <EditText
         android:id="@+id/product_name"
@@ -22,7 +22,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/Select_product_image"
         android:layout_marginLeft="45dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="25dp"
         android:layout_marginRight="45dp"
         android:background="@drawable/edit_text_border"
         android:hint="Product Name"
@@ -40,6 +40,20 @@
         android:layout_marginRight="45dp"
         android:background="@drawable/button_border"
         android:text="Add Product"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/update_product"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/add_new_product"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/button_border"
+        android:text="Update Product"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="16dp" />

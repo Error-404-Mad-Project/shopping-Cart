@@ -10,90 +10,91 @@ import android.widget.ImageView;
 public class AdminCategoryActivity extends AppCompatActivity {
 
 
-    private ImageView vegetables, fruits ;
-    private ImageView milkProduct, drinkProduct;
-    private ImageView foodProduct, householdProduct;
+    private ImageView Vegetables, Fruits ;
+    private ImageView MilkProduct, DrinkProduct;
+    private ImageView FoodProduct, HouseholdProduct;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_admin_category);
 
-        vegetables = (ImageView) findViewById(R.id.vegetables);
-        fruits = (ImageView) findViewById(R.id.fruits);
+        Vegetables = (ImageView) findViewById(R.id.vegetables);
+        Fruits = (ImageView) findViewById(R.id.fruits);
 
-        milkProduct = (ImageView) findViewById(R.id.milk_products);
-        drinkProduct = (ImageView) findViewById(R.id.drink_items);
+        MilkProduct = (ImageView) findViewById(R.id.milk_products);
+        DrinkProduct = (ImageView) findViewById(R.id.drink_items);
 
-        foodProduct = (ImageView) findViewById(R.id.food_item);
-        householdProduct = (ImageView) findViewById(R.id.household);
+        FoodProduct = (ImageView) findViewById(R.id.food_item);
+        HouseholdProduct = (ImageView) findViewById(R.id.household);
 
-        vegetables.setOnClickListener(new View.OnClickListener()
+        Vegetables.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category","vegetables");
+                intent.putExtra("category","Vegetables");
                 startActivity(intent);
             }
         });
 
-        fruits.setOnClickListener(new View.OnClickListener()
+        Fruits.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "fruits");
-                startActivity(intent);
-
-            }
-        });
-
-        milkProduct.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "milkProduct");
+                intent.putExtra("category", "Fruits");
                 startActivity(intent);
 
             }
         });
 
-        drinkProduct.setOnClickListener(new View.OnClickListener()
+        MilkProduct.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "drinkProduct");
+                intent.putExtra("category", "Milk Products");
                 startActivity(intent);
 
             }
         });
 
-        foodProduct.setOnClickListener(new View.OnClickListener()
+        DrinkProduct.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "foodProduct");
+                intent.putExtra("category", "Drink Products");
                 startActivity(intent);
 
             }
         });
 
-        householdProduct.setOnClickListener(new View.OnClickListener()
+        FoodProduct.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
-                intent.putExtra("category", "householdProduct");
+                intent.putExtra("category", "Food Products");
+                startActivity(intent);
+
+            }
+        });
+
+        HouseholdProduct.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
+                intent.putExtra("category", "Household Products");
                 startActivity(intent);
 
             }

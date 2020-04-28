@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="20dp"
     android:layout_marginStart="15dp"
@@ -11,7 +11,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/product_name"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_below="@+id/product_name"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:scaleType="centerCrop" />
 
         <TextView
@@ -37,17 +37,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_image"
-            android:gravity="center_horizontal"
             android:text="Product Price"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="18dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal" />
 
         <TextView
             android:id="@+id/product_description"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/product_price"
             android:gravity="center_horizontal"
             android:text="Product Description"

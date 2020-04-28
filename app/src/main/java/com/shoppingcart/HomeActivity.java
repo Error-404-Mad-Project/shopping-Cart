@@ -109,7 +109,7 @@ public class HomeActivity extends AppCompatActivity
                         public void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull Products model) {
                             holder.txtProductName.setText (model.getPname ());
                             holder.txtProductDescription.setText (model.getDescription ());
-                            holder.txtProductPrice.setText ("Price =" + model.getPrice () + "Rs");
+                            holder.txtProductPrice.setText ("Price =" + "Rs." + model.getPrice ());
                             Picasso.get ().load (model.getImage ()).into (holder.imageView);
 
                         }
@@ -167,7 +167,8 @@ public class HomeActivity extends AppCompatActivity
             }
             else if (id == R.id.nav_gallery)
             {
-
+                Intent intent = new Intent (HomeActivity.this,UpdateCustomer.class);
+                startActivity (intent);
             }
             else if (id == R.id.nav_slideshow)
             {
