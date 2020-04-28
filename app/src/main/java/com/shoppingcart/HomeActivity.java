@@ -31,12 +31,13 @@ import com.shoppingcart.Model.Products;
 import com.shoppingcart.Prevalent.Prevalent;
 import com.squareup.picasso.Picasso;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-//    private ImageView userProfilePic;
+//    private CircleImageView userProfilePic;
     private DatabaseReference ProductsRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -80,11 +81,11 @@ public class HomeActivity extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         TextView userNameTextView = headerView.findViewById (R.id.user_profile_name);
         TextView userEmailTextView = headerView.findViewById (R.id.textView);
-//        ImageView ProfileImageView = headerView.findViewById (R.id.user_profile_image);
+        ImageView profileImageView = headerView.findViewById (R.id.user_profile_image);
 
         userNameTextView.setText (Prevalent.currentOnlineUser.getName());
         userEmailTextView.setText (Prevalent.currentOnlineUser.getEmail ());
-//        Picasso.get ().load (Prevalent.currentOnlineUser.getImage()).placeholder (R.drawable.person).into (userProfilePic);
+        Picasso.get ().load (Prevalent.currentOnlineUser.getImage()).placeholder (R.drawable.person).into (profileImageView);
 
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);

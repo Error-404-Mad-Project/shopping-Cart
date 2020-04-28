@@ -64,7 +64,7 @@ public class CustomerView extends AppCompatActivity
         }
 
         //Hooks
-        userProfilePic = findViewById (R.id.profileImage);
+//        userProfilePic = findViewById (R.id.profileImage);
         profileName = findViewById (R.id.textView17);
         profileEmail = findViewById (R.id.textView18);
         profileAddress = findViewById (R.id.textView19);

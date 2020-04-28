@@ -35,11 +35,13 @@ import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.util.HashMap;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class UpdateCustomer extends AppCompatActivity {
 
-    private ImageView imageView;
-    private EditText profileName, profileEmail, profileAddress, profilePhone;
-    private  TextView profileChangeTextBtn;
+    private CircleImageView profileImageView;
+    private EditText fullNameEditText, userEmailEditText, addressEditText, phoneEditText;
+    private TextView profileChangeTextBtn,  closeTextBtn, saveTextButton;
     private Button mButtonSave;
 
 
@@ -56,13 +58,15 @@ public class UpdateCustomer extends AppCompatActivity {
 
         storageProfilePictureRef = FirebaseStorage.getInstance ().getReference ().child ("Profile pictures");
 
-        imageView = (ImageView) findViewById (R.id.user_profile_image);
-        profileName = (EditText) findViewById (R.id.editText12);
-        profileEmail = (EditText) findViewById (R.id.editText14);
-        profileAddress = (EditText) findViewById (R.id.editText17);
-        profilePhone = (EditText) findViewById (R.id.editText18);
-        profileChangeTextBtn = (TextView) findViewById (R.id.textView28);
-        mButtonSave = (Button) findViewById (R.id.button7);
+        profileImageView = (CircleImageView) findViewById(R.id.settings_profile_image);
+        fullNameEditText = (EditText) findViewById(R.id.settings_full_name);
+        userEmailEditText = (EditText) findViewById(R.id.settings_email);
+        addressEditText = (EditText) findViewById(R.id.settings_address);
+        phoneEditText = (EditText) findViewById(R.id.phone);
+
+        profileChangeTextBtn = (TextView) findViewById(R.id.profile_image_change_btn);
+        closeTextBtn = (TextView) findViewById(R.id.close_settings_btn);
+        saveTextButton = (TextView) findViewById(R.id.update_account_settings_btn);
 //
 //        if (getActionBar () != null )
 //        {
@@ -70,32 +74,39 @@ public class UpdateCustomer extends AppCompatActivity {
 //            getSupportActionBar ().setDisplayHomeAsUpEnabled (true);
 //        }
 
-        userInfoDisplay (imageView, profileName, profileEmail, profileAddress, profilePhone);
+        userInfoDisplay(profileImageView, fullNameEditText, userEmailEditText, addressEditText, phoneEditText);
 
-        mButtonSave.setOnClickListener (new View.OnClickListener () {
+        closeTextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (checker.equals ("clicked"))
-                {
-                    userInfoSaved ();
+            public void onClick(View view)
+            {
+                finish();
+            }
+        });
 
+        saveTextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                if (checker.equals("clicked"))
+                {
+                    userInfoSaved();
                 }
                 else
                 {
-                    updateOnlyUserInfo ();
+                    updateOnlyUserInfo();
                 }
             }
-
         });
 
-        profileChangeTextBtn.setOnClickListener (new View.OnClickListener () {
+        profileChangeTextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view)
+            {
                 checker = "clicked";
 
-                // start cropping activity for pre-acquired image saved on the device
                 CropImage.activity(imageUri)
-                        .setAspectRatio (1,1)
+                        .setAspectRatio(1, 1)
                         .start(UpdateCustomer.this);
             }
         });
@@ -105,12 +116,13 @@ public class UpdateCustomer extends AppCompatActivity {
     {
         DatabaseReference reference = FirebaseDatabase.getInstance ().getReference ().child ("Users");
 
-        HashMap<String, Object> userMap = new HashMap<> ();
-        userMap.put ("name",profileName.getText ().toString ());
-        userMap.put ("email",profileEmail.getText ().toString ());
-        userMap.put ("address",profileAddress.getText ().toString ());
-        userMap.put ("phone",profilePhone.getText ().toString ());
-        reference.child (Prevalent.currentOnlineUser.getName ()).updateChildren (userMap);
+        HashMap<String, Object> userMap = new HashMap<>();
+        userMap. put("name", fullNameEditText.getText().toString());
+        userMap. put("email", userEmailEditText.getText().toString());
+        userMap. put("address", addressEditText.getText().toString());
+        userMap. put("phone", phoneEditText.getText().toString());
+
+        reference.child(Prevalent.currentOnlineUser.getName()).updateChildren(userMap);
 
         startActivity (new Intent (UpdateCustomer.this,HomeActivity.class));
         Toast.makeText (UpdateCustomer.this,"Profile Update Successfully.",Toast.LENGTH_SHORT).show ();
@@ -122,40 +134,42 @@ public class UpdateCustomer extends AppCompatActivity {
 
         super.onActivityResult (requestCode, resultCode, data);
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK && data != null)
+        if (requestCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE  &&  resultCode==RESULT_OK  &&  data!=null)
         {
-            CropImage.ActivityResult result = CropImage.getActivityResult (data);
-            imageUri = result.getUri ();
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            imageUri = result.getUri();
 
-            imageView.setImageURI (imageUri);
+            profileImageView.setImageURI(imageUri);
         }
         else
         {
-            Toast.makeText (this,"Sorry, Please try again.",Toast.LENGTH_SHORT).show ();
-            startActivity (new Intent (UpdateCustomer.this,UpdateCustomer.class));
-            finish ();
+            Toast.makeText(this, "Error, Try Again.", Toast.LENGTH_SHORT).show();
+
+            startActivity(new Intent(UpdateCustomer.this, UpdateCustomer.class));
+            finish();
         }
     }
 
     private void userInfoSaved()
     {
-        if (TextUtils.isEmpty (profileName.getText ().toString ()))
+        if (TextUtils.isEmpty(fullNameEditText.getText().toString()))
         {
-            Toast.makeText (this,"Name is mandatory.",Toast.LENGTH_SHORT).show ();
+            Toast.makeText(this, "Name is mandatory.", Toast.LENGTH_SHORT).show();
         }
-        else if (TextUtils.isEmpty (profileEmail.getText ().toString ()))
+        else if (TextUtils.isEmpty(userEmailEditText.getText().toString()))
         {
-            Toast.makeText (this,"Email is mandatory.",Toast.LENGTH_SHORT).show ();
+            Toast.makeText(this, "Email is mandatory.", Toast.LENGTH_SHORT).show();
         }
-        else if (TextUtils.isEmpty (profileAddress.getText ().toString ()))
+        else if (TextUtils.isEmpty(addressEditText.getText().toString()))
         {
-            Toast.makeText (this,"Address is mandatory.",Toast.LENGTH_SHORT).show ();
+            Toast.makeText(this, "Address is address.", Toast.LENGTH_SHORT).show();
         }
-        else if (TextUtils.isEmpty (profilePhone.getText ().toString ()))
+        else if (TextUtils.isEmpty(phoneEditText.getText().toString()))
         {
-            Toast.makeText (this,"Phone is mandatory.",Toast.LENGTH_SHORT).show ();
+            Toast.makeText(this, "Phone is mandatory.", Toast.LENGTH_SHORT).show();
         }
-        else if (checker.equals ("clicked"))
+
+        else if(checker.equals("clicked"))
         {
             uploadImage();
         }
@@ -199,13 +213,15 @@ public class UpdateCustomer extends AppCompatActivity {
 
                         DatabaseReference reference = FirebaseDatabase.getInstance ().getReference ().child ("Users");
 
-                        HashMap<String, Object> userMap = new HashMap<> ();
-                        userMap.put ("name",profileName.getText ().toString ());
-                        userMap.put ("email",profileEmail.getText ().toString ());
-                        userMap.put ("address",profileAddress.getText ().toString ());
-                        userMap.put ("phone",profilePhone.getText ().toString ());
-                        userMap.put ("image",myUrl);
-                        reference.child (Prevalent.currentOnlineUser.getName ()).updateChildren (userMap);
+
+                        HashMap<String, Object> userMap = new HashMap<>();
+                        userMap. put("name", fullNameEditText.getText().toString());
+                        userMap. put("email", userEmailEditText.getText().toString());
+                        userMap. put("address", addressEditText.getText().toString());
+                        userMap. put("phone", phoneEditText.getText().toString());
+
+                        userMap. put("image", myUrl);
+                        reference.child(Prevalent.currentOnlineUser.getName()).updateChildren(userMap);
 
                         progressDialog.dismiss ();
 
@@ -227,35 +243,36 @@ public class UpdateCustomer extends AppCompatActivity {
         }
     }
 
-    private void userInfoDisplay(final ImageView imageView, final EditText profileName, final EditText profileEmail, final EditText profileAddress, final EditText profilePhone)
+
+    private void userInfoDisplay(final CircleImageView profileImageView, final EditText fullNameEditText, final EditText userEmailEditText, final EditText addressEditText, final EditText phoneEditText)
     {
-        DatabaseReference UsersRef = FirebaseDatabase.getInstance ().getReference ().child ("Users").child (Prevalent.currentOnlineUser.getName ());
+        DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentOnlineUser.getName());
 
-        UsersRef.addValueEventListener (new ValueEventListener () {
+        UsersRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            public void onDataChange(DataSnapshot dataSnapshot)
             {
-                if (dataSnapshot.exists ())
+                if (dataSnapshot.exists())
                 {
-                    if (dataSnapshot.child ("image").exists ())
+                    if (dataSnapshot.child("image").exists())
                     {
-                        String image = dataSnapshot.child ("image").getValue ().toString ();
-                        String name = dataSnapshot.child ("name").getValue ().toString ();
-                        String email = dataSnapshot.child ("email").getValue ().toString ();
-                        String address = dataSnapshot.child ("address").getValue ().toString ();
-                        String phone = dataSnapshot.child ("phone").getValue ().toString ();
+                        String image = dataSnapshot.child("image").getValue().toString();
+                        String name = dataSnapshot.child("name").getValue().toString();
+                        String email = dataSnapshot.child("email").getValue().toString();
+                        String address = dataSnapshot.child("address").getValue().toString();
+                        String phone = dataSnapshot.child("phone").getValue().toString();
 
-                        Picasso.get().load(image).into(imageView);
-                        profileName.setText (name);
-                        profileEmail.setText (email);
-                        profileAddress.setText (address);
-                        profilePhone.setText (phone);
+                        Picasso.get().load(image).into(profileImageView);
+                        fullNameEditText.setText(name);
+                        userEmailEditText.setText(email);
+                        addressEditText.setText(address);
+                        phoneEditText.setText(phone);
                     }
                 }
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });
