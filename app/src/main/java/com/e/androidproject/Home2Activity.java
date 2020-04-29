@@ -36,7 +36,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import io.paperdb.Paper;
 
 public class Home2Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener
+{
 
 
     private DatabaseReference ProductsRef;
@@ -44,13 +45,12 @@ public class Home2Activity extends AppCompatActivity
     RecyclerView.LayoutManager layoutManager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home2);
 
-
         ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
-
 
         Paper.init(this);
 
@@ -58,14 +58,14 @@ public class Home2Activity extends AppCompatActivity
         toolbar.setTitle("Home");
         setSupportActionBar(toolbar);
 
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab =(FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(Home2Activity.this, CartActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -83,12 +83,11 @@ public class Home2Activity extends AppCompatActivity
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-
-
     }
 
     @Override
-    public void onStart() {
+    public void onStart()
+    {
         super.onStart();
 
         FirebaseRecyclerOptions<Products> options =
@@ -96,17 +95,19 @@ public class Home2Activity extends AppCompatActivity
                         .setQuery(ProductsRef, Products.class)
                         .build();
 
-
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
-                new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
+                new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options)
+                {
                     @Override
-                    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model) {
+                    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model)
+                    {
                         holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
                         holder.txtProductPrice.setText("Price =" + model.getPrice() + "Rs");
                         Picasso.get().load(model.getImage()).into(holder.imageView);
 
-                        holder.itemView.setOnClickListener(new View.OnClickListener() {
+                        holder.itemView.setOnClickListener(new View.OnClickListener()
+                        {
                             @Override
                             public void onClick(View view)
                             {
@@ -120,7 +121,8 @@ public class Home2Activity extends AppCompatActivity
 
                     @NonNull
                     @Override
-                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+                    {
                         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items_layout, parent, false);
                         ProductViewHolder holder = new ProductViewHolder(view);
                         return holder;
@@ -133,7 +135,8 @@ public class Home2Activity extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -143,14 +146,16 @@ public class Home2Activity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home2, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         int id = item.getItemId();
 
        /* if(id == R.id.action_settings)
@@ -161,16 +166,25 @@ public class Home2Activity extends AppCompatActivity
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
         int id = item.getItemId();
 
-        if (id == R.id.nav_notification) {
+        if (id == R.id.nav_notification)
+        {
 
-        } else if (id == R.id.nav_account) {
+        }
+        else if (id == R.id.nav_account)
+        {
 
-        } else if (id == R.id.nav_cart) {
-
-        } else if (id == R.id.logout) {
+        }
+        else if (id == R.id.nav_cart)
+        {
+            Intent intent = new Intent(Home2Activity.this, CartActivity.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.logout)
+        {
             Paper.book().destroy();
 
             Intent intent = new Intent(Home2Activity.this, MainActivity.class);
@@ -186,7 +200,8 @@ public class Home2Activity extends AppCompatActivity
 
 
     @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
+    public void onPointerCaptureChanged(boolean hasCapture)
+    {
 
     }
 

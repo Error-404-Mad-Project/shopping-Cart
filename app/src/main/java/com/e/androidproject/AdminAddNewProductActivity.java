@@ -30,30 +30,32 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class AdminAddNewProductActivity extends AppCompatActivity {
+public class AdminAddNewProductActivity extends AppCompatActivity
+{
 
     private String CategoryName, Description, Price, Pname, saveCurrentDate, saveCurrentTime;
     private Button AddNewProductButton;
     private ImageView InputProductImage;
     private EditText InputProductName, InputProductDescription, InputProductPrice;
+
     private static final int GalleryPick = 1;
     private Uri ImageUri;
+
     private String productRandomKey, downloadImageUrl;
+
     private StorageReference ProductImagesRef;
     private DatabaseReference ProductRef;
     private ProgressDialog loadingBar;
 
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_add_new_product);
 
         CategoryName = getIntent().getExtras().get("category").toString();
         ProductImagesRef = FirebaseStorage.getInstance().getReference().child("Product Images");
         ProductRef = FirebaseDatabase.getInstance().getReference().child("Products");
-
-
 
         AddNewProductButton = (Button) findViewById(R.id.add_new_product);
         InputProductImage = (ImageView) findViewById(R.id.Select_product_image);
@@ -62,7 +64,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         InputProductPrice = (EditText) findViewById(R.id.product_price);
         loadingBar = new ProgressDialog(this);
 
-        InputProductImage.setOnClickListener(new View.OnClickListener() {
+        InputProductImage.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
@@ -70,7 +73,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
             }
         });
 
-        AddNewProductButton.setOnClickListener(new View.OnClickListener() {
+        AddNewProductButton.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
@@ -150,7 +154,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
 
         final UploadTask uploadTask = filePath.putFile(ImageUri);
 
-        uploadTask.addOnFailureListener(new OnFailureListener() {
+        uploadTask.addOnFailureListener(new OnFailureListener()
+        {
             @Override
             public void onFailure(@NonNull Exception e)
             {
@@ -158,13 +163,15 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                 Toast.makeText(AdminAddNewProductActivity.this, "Error:" +message,Toast.LENGTH_SHORT).show();
                 loadingBar.dismiss();
             }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>()
+        {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot)
             {
                 Toast.makeText(AdminAddNewProductActivity.this, "Product Image uploaded Successfully",Toast.LENGTH_SHORT).show();
 
-                Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>()
+                {
                     @Override
                     public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception
                     {
@@ -177,7 +184,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                         downloadImageUrl = filePath.getDownloadUrl().toString();
                         return filePath.getDownloadUrl();
                     }
-                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                }).addOnCompleteListener(new OnCompleteListener<Uri>()
+                {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task)
                     {
@@ -208,7 +216,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
         productMap.put("pname", Pname);
 
         ProductRef.child(productRandomKey).updateChildren(productMap)
-                .addOnCompleteListener(new OnCompleteListener<Void>(){
+                .addOnCompleteListener(new OnCompleteListener<Void>()
+                {
                     @Override
                     public void onComplete(@NonNull Task<Void> task)
                     {
@@ -228,9 +237,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity {
                             }
 
                     }
-        });
+                });
 
     }
-
-
 }

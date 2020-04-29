@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class AdminCategoryActivity extends AppCompatActivity {
+public class AdminCategoryActivity extends AppCompatActivity
+{
 
     private ImageView vegetables, fruits ;
     private ImageView milkProduct, drinkProduct;
@@ -16,7 +17,6 @@ public class AdminCategoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_category);
 
@@ -29,9 +29,8 @@ public class AdminCategoryActivity extends AppCompatActivity {
         foodProduct = (ImageView) findViewById(R.id.food_item);
         householdProduct = (ImageView) findViewById(R.id.household);
 
-
-
-        vegetables.setOnClickListener(new View.OnClickListener() {
+        vegetables.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
@@ -40,49 +39,59 @@ public class AdminCategoryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        fruits.setOnClickListener(new View.OnClickListener() {
+
+        fruits.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
                 intent.putExtra("category", "fruits");
                 startActivity(intent);
-
             }
         });
-        milkProduct.setOnClickListener(new View.OnClickListener() {
+
+        milkProduct.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
                 intent.putExtra("category", "milkProduct");
                 startActivity(intent);
-
             }
         });
-        drinkProduct.setOnClickListener(new View.OnClickListener() {
+
+        drinkProduct.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
                 intent.putExtra("category", "drinkProduct");
                 startActivity(intent);
-
             }
         });
-        foodProduct.setOnClickListener(new View.OnClickListener() {
+
+        foodProduct.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
                 intent.putExtra("category", "foodProduct");
                 startActivity(intent);
-
             }
         });
-        householdProduct.setOnClickListener(new View.OnClickListener() {
+
+        householdProduct.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);
                 intent.putExtra("category", "householdProduct");
                 startActivity(intent);
-
             }
         });
     }

@@ -9,7 +9,8 @@ public class Products
 
     }
 
-    public Products(String pname, String description, String price, String image, String category, String pid, String date, String time) {
+    public Products(String pname, String description, String price, String image, String category, String pid, String date, String time)
+    {
         this.pname = pname;
         this.description = description;
         this.price = price;
@@ -20,67 +21,83 @@ public class Products
         this.time = time;
     }
 
-    public String getPname() {
+    public String getPname()
+    {
         return pname;
     }
 
-    public void setPname(String pname) {
+    public void setPname(String pname)
+    {
         this.pname = pname;
     }
 
-    public String getDescription() {
+    public String getDescription()
+    {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(String description)
+    {
         this.description = description;
     }
 
-    public String getPrice() {
+    public String getPrice()
+    {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(String price)
+    {
         this.price = price;
     }
 
-    public String getImage() {
+    public String getImage()
+    {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(String image)
+    {
         this.image = image;
     }
 
-    public String getCategory() {
+    public String getCategory()
+    {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(String category)
+    {
         this.category = category;
     }
 
-    public String getPid() {
+    public String getPid()
+    {
         return pid;
     }
 
-    public void setPid(String pid) {
+    public void setPid(String pid)
+    {
         this.pid = pid;
     }
 
-    public String getDate() {
+    public String getDate()
+    {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(String date)
+    {
         this.date = date;
     }
 
-    public String getTime() {
+    public String getTime()
+    {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(String time)
+    {
         this.time = time;
     }
 }

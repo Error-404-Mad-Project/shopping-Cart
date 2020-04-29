@@ -11,7 +11,8 @@
         android:id="@+id/product_image_details"
         android:layout_width="match_parent"
         android:layout_height="260dp"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        />
 
 
     <TextView
@@ -64,6 +65,7 @@
        android:layout_centerHorizontal="true"
         android:layout_below="@+id/product_price_details"
         android:layout_marginTop="10dp">
+
     </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

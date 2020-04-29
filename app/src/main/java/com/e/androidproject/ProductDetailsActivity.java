@@ -27,16 +27,18 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class ProductDetailsActivity extends AppCompatActivity {
+public class ProductDetailsActivity extends AppCompatActivity
+{
 
     private FloatingActionButton addToCartBtn;
     private ImageView productImage;
     private ElegantNumberButton numberButton;
     private TextView productPrice, productDescription, productName;
-    private String productID = "";
+    private String productID = "", state = "Normal";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
 
@@ -49,16 +51,31 @@ public class ProductDetailsActivity extends AppCompatActivity {
         productDescription = (TextView) findViewById(R.id.product_description_details);
         productPrice = (TextView) findViewById(R.id.product_price_details);
 
-
         getProductDetails(productID);
 
-        addToCartBtn.setOnClickListener(new View.OnClickListener() {
+        addToCartBtn.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
-               addingToCartList();
+
+               if (state.equals("Order Placed") || state.equals("Order Shipped"))
+               {
+                   Toast.makeText(ProductDetailsActivity.this, "you can add purchase more products, once your order is shipped or confirmed...",Toast.LENGTH_LONG).show();
+               }
+               else
+               {
+                   addingToCartList();
+               }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+       // checkOrderState();
     }
 
     private void addingToCartList()
@@ -86,7 +103,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cartListRef.child("Users View").child(Prevalent.currentOnlineUser.getPhone())
                 .child("Products").child("productID")
                 .updateChildren(cartMap)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                .addOnCompleteListener(new OnCompleteListener<Void>()
+                {
                     @Override
                     public void onComplete(@NonNull Task<Void> task)
                     {
@@ -95,7 +113,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
                             cartListRef.child("Admin View").child(Prevalent.currentOnlineUser.getPhone())
                                     .child("Products").child("productID")
                                     .updateChildren(cartMap)
-                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    .addOnCompleteListener(new OnCompleteListener<Void>()
+                                    {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task)
                                         {
@@ -117,7 +136,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
     {
         DatabaseReference productRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
-        productRef.child(productID).addValueEventListener(new ValueEventListener() {
+        productRef.child(productID).addValueEventListener(new ValueEventListener()
+        {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
@@ -133,7 +153,44 @@ public class ProductDetailsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError)
+            {
+
+            }
+        });
+    }
+
+    private void checkOrderState()
+    {
+        DatabaseReference orderRef;
+        orderRef = FirebaseDatabase.getInstance().getReference().child("Order").child(Prevalent.currentOnlineUser.getPhone());
+
+        orderRef.addValueEventListener(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.exists())
+                {
+                    String shippingState = dataSnapshot.child("state").getValue().toString();
+
+
+                    if (shippingState.equals("shipped"))
+                    {
+                        state = "Order Shipped";
+
+                    }
+                    else if (shippingState.equals("not shipped"))
+                    {
+                        state = "Order Placed";
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError)
+            {
 
             }
         });

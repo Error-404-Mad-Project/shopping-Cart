@@ -18,7 +18,8 @@
         android:textAlignment="center"
         android:textSize="26sp"
         android:textStyle="bold"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        />
     
     <LinearLayout
         android:id="@+id/linear1_category_layout"
@@ -43,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/fruititem"
-             />
+            />
 
     </LinearLayout>
     <LinearLayout
@@ -61,7 +62,7 @@
             android:layout_width="206dp"
             android:layout_height="80dp"
             android:src="@drawable/milkproduct"
-             />
+            />
 
         <ImageView
             android:id="@+id/drink_items"
