@@ -12,14 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdateProductActivity"></activity>
+        <activity android:name=".WriteComment">
+
+        </activity>
+        <activity android:name=".Viewcomments" />
+        <activity android:name=".UpdateProductActivity" />
         <activity
             android:name=".AdminAddNewProductActivity"
             android:parentActivityName=".AdminCategoryActivity"
             android:theme="@style/Theme.MaterialComponents.Light.Bridge" />
         <activity android:name=".AdminCategoryActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".ProductDetailsActivity" />
+        <activity android:name=".ProductDetailsActivity" >
+
+        </activity>
         <activity android:name=".CartActivity" />
         <activity android:name=".ConfirmFinalOrderActivity" />
         <activity android:name=".UpdateCustomer" />
@@ -40,6 +46,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"

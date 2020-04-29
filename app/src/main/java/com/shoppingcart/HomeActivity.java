@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
@@ -42,12 +43,17 @@ public class HomeActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
+
+
     private String type = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_home);
+
+
+
 
 //        userProfilePic = findViewById (R.id.profileImage);
 
@@ -92,6 +98,7 @@ public class HomeActivity extends AppCompatActivity
         layoutManager = new LinearLayoutManager (this);
         recyclerView.setLayoutManager(layoutManager);
 
+
     }
 
         @Override
@@ -112,6 +119,16 @@ public class HomeActivity extends AppCompatActivity
                             holder.txtProductDescription.setText (model.getDescription ());
                             holder.txtProductPrice.setText ("Price =" + "Rs." + model.getPrice ());
                             Picasso.get ().load (model.getImage ()).into (holder.imageView);
+
+                            holder.imageView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(HomeActivity.this,ProductDetailsActivity.class);
+
+
+
+                                }
+                            });
 
                         }
 

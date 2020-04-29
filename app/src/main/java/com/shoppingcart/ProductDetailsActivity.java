@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +30,7 @@ import java.util.HashMap;
 
 public class ProductDetailsActivity extends AppCompatActivity {
 
-    private Button addToCartButton;
+    private Button addToCartBtn,openMessage;
     private ImageView productImage;
     private ElegantNumberButton numberButton;
     private TextView productPrice, productDescription, productName;
@@ -43,7 +44,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         productID = getIntent().getStringExtra("pid");
 
-        addToCartButton = (Button) findViewById(R.id.pd_add_to_cart_button);
+        addToCartBtn = (Button) findViewById(R.id.add_product_to_cart);
+        openMessage = (Button)findViewById((R.id.view_comment));
         numberButton = (ElegantNumberButton) findViewById(R.id.number_btn);
         productImage = (ImageView) findViewById(R.id.product_image_details);
         productName = (TextView) findViewById(R.id.product_name_details);
@@ -54,9 +56,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
         getProductDetails(productID);
 
 
-        addToCartButton.setOnClickListener(new View.OnClickListener() {
+        addToCartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
+
             {
                 if (state.equals("Order Placed") || state.equals("Order Shipped"))
                 {
@@ -68,6 +71,18 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 }
             }
         });
+
+        openMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductDetailsActivity.this, WriteComment.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
 
 
@@ -90,7 +105,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         SimpleDateFormat currentTime = new SimpleDateFormat ("HH:mm:ss a");
         saveCurrentTime = currentDate.format(calForDate.getTime());
 
-        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
+        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("CartList");
 
         final HashMap<String, Object> cartMap = new HashMap<> ();
         cartMap.put("pid", productID);
@@ -101,8 +116,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cartMap.put("quantity", numberButton.getNumber());
         cartMap.put("discount", "");
 
-        cartListRef.child("User View").child(Prevalent.currentOnlineUser.getPhone())
-                .child("Products").child(productID)
+        cartListRef.child("Users View").child(Prevalent.currentOnlineUser.getPhone())
+                .child("Products").child("productID")
                 .updateChildren(cartMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -111,7 +126,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                         if (task.isSuccessful())
                         {
                             cartListRef.child("Admin View").child(Prevalent.currentOnlineUser.getPhone())
-                                    .child("Products").child(productID)
+                                    .child("Products").child("productID")
                                     .updateChildren(cartMap)
                                     .addOnCompleteListener(new OnCompleteListener<Void> () {
                                         @Override
@@ -121,7 +136,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                                             {
                                                 Toast.makeText(ProductDetailsActivity.this, "Added to Cart List.", Toast.LENGTH_SHORT).show();
 
-                                                Intent intent = new Intent(ProductDetailsActivity.this, Login.class);
+                                                Intent intent = new Intent(ProductDetailsActivity.this, HomeActivity.class);
                                                 startActivity(intent);
                                             }
                                         }
@@ -189,3 +204,5 @@ public class ProductDetailsActivity extends AppCompatActivity {
         });
     }
 }
+
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WriteComment">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_uName"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_margin="20dp"
+        android:text="Name"
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/product_name"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+
+        android:text="Product"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/commentEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:layout_toStartOf="@id/sendBtn"
+        android:hint="Enter comment"
+        android:inputType="textCapSentences|textMultiLine"
+        android:background="@drawable/edit_text_border"
+        android:padding="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/sendBtn" />
+
+    <ImageButton
+        android:id="@+id/sendBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_border"
+        android:src="@drawable/round_send_black_18"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_Button"
+        android:text="View Messages"
+        />
+
+
+
+
+
+</RelativeLayout>

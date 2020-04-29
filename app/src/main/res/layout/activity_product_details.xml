@@ -55,30 +55,42 @@
 
     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
         android:id="@+id/number_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="6dp"
-        app:textSize="16dp"
-        app:initialNumber="1"
-        app:finalNumber="10"
-        android:layout_centerHorizontal="true"
+        android:layout_width="240dp"
+        android:layout_height="58dp"
         android:layout_below="@+id/product_price_details"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        >
+        android:elevation="6dp"
+        app:finalNumber="10"
+        app:initialNumber="1"
+        app:textSize="16sp">
+
     </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
-
     <Button
-        android:id="@+id/pd_add_to_cart_button"
+        android:id="@+id/add_product_to_cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_border"
-        android:layout_margin="15dp"
+        android:elevation="6dp"
+        android:text="Add Cart"
         android:layout_alignParentBottom="true"
-        android:text="Add to Cart"
-        android:textColor="@android:color/white"
-        android:textSize="18dp"
-        />
+        android:layout_margin="20dp"
+        android:background="@drawable/button_border"/>
+
+    <Button
+        android:id="@+id/view_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="82dp"
+        android:elevation="6dp"
+        android:text="View Comment"
+        android:background="@drawable/button_border"/>
 
 
 </RelativeLayout>
