@@ -6,6 +6,15 @@ public class Comments {
     public Comments() {
     }
 
+    public Comments(String cId, String pname, String name, String comment, String date, String time) {
+        this.cId = cId;
+        this.pname = pname;
+        this.name = name;
+        this.comment = comment;
+        this.date = date;
+        this.time = time;
+    }
+
     public String getcId() {
         return cId;
     }
