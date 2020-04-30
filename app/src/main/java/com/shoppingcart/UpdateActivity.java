@@ -376,5 +376,15 @@ public class UpdateActivity extends AppCompatActivity
 //
 //            }
 //        });
+
+        skipButton = (Button) findViewById(R.id.skip_button);
+
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UpdateActivity.this, Instructions.class);
+                startActivity(intent);
+            }
+        });
     }
 }
