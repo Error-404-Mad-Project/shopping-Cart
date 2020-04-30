@@ -94,7 +94,7 @@ public class DeliveryActivityMain extends AppCompatActivity {
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (!(dataSnapshot.child("DeliveryUser").child(telephone_number).exists()))
+                if (!(dataSnapshot.child("DeliveryUser").child(name).exists()))
                 {
                     HashMap<String, Object> userdataMap = new HashMap<> ();
                     userdataMap.put ("name", name);
@@ -111,7 +111,8 @@ public class DeliveryActivityMain extends AppCompatActivity {
                                         Toast.makeText (DeliveryActivityMain.this, "Congratulations, your account has been created.", Toast.LENGTH_SHORT).show ();
                                         loadingBar.dismiss();
 
-                                        Intent intent = new Intent (DeliveryActivityMain.this, Instructions.class);
+                                        Intent intent = new Intent (DeliveryActivityMain.this, UpdateActivity.class);
+                                        intent.putExtra("Name", name );
                                         startActivity (intent);
                                     }
 

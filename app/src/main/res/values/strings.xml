@@ -83,4 +83,26 @@
     <string name="if_our_both_address_and_telephone_number_will_be_wrong">If our both address and telephone number will be wrong?</string>
     <string name="your_order_will_be_cancel_and_you_has_to_pay_it_s_delivery_fee_at_the_next_order_it_mean_when_you_order_next_time_that_delivery_fee_will_add">Your order will be cancel and you has to pay it\'s delivery fee at the next order.It mean when you order next time that delivery fee will add.</string>
     <string name="delete">Delete</string>
+    <string name="backs">Back</string>
+    <string name="update_your_details">Update Your Details</string>
+    <!--    <string name="update">Update</string>-->
+    <!--    <string name="skip">Skip</string>-->
+    <!--    <string name="update_name">Update Name</string>-->
+    <!--    <string name="update_address">Update Address</string>-->
+    <!--    <string name="update_telephone_number">Update Telephone Number</string>-->
+    <!--    <string name="update_e_mail">Update E-mail</string>-->
+    <!--    <string name="update_details">Update Details</string>-->
+    <string name="update_your_name">Update Your Name</string>
+    <string name="update_your_address">Update Your Address</string>
+    <string name="update_details">Update Details</string>
+    <string name="skip">Skip</string>
+    <string name="update">Update</string>
+    <string name="update_name">Update Name</string>
+    <string name="update_address">Update Address</string>
+    <string name="update_telephone_number">Update Telephone Number</string>
+    <string name="update_e_mail">Update E-mail</string>
+    <string name="close">Close</string>
+    <string name="phone_number">Phone Number...</string>
+    <string name="full_name">Full Name...</string>
+    <string name="change_profile">Change Profile</string>
 </resources>

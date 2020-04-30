@@ -8,6 +8,12 @@ public class DeliveryUser {
         private String Telephone_Number;
         private String Email;
 
+
+
+
+
+
+
         public String getName() {
             return Name;
         }
@@ -39,6 +45,10 @@ public class DeliveryUser {
         public void setEmail(String email) {
             Email = email;
         }
-    }
+
+//    public String getName() {
+//        return Name;
+//    }
+}
 
 
