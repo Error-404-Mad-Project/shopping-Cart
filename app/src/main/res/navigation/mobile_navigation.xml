@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.e.androidproject.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:name="com.e.androidproject.ui.notification.HomeFragment"
+        android:label="Notification"
         tools:layout="@layout/fragment_home">
 
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_home_second"
-        android:name="com.e.androidproject.ui.home.HomeSecondFragment"
+        android:name="com.e.androidproject.ui.notification.HomeSecondFragment"
         android:label="@string/home_second"
         tools:layout="@layout/fragment_home_second">
         <action
@@ -35,14 +35,38 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.e.androidproject.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery"
-        />
+        android:label="Accounts"
+        tools:layout="@layout/fragment_gallery">
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.e.androidproject.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow"
-        />
+        android:label="Shopping Cart"
+        tools:layout="@layout/fragment_slideshow">
+        <action
+            android:id="@+id/action_nav_slideshow_to_search_bar"
+            app:destination="@id/search_bar" />
+    </fragment>
+    <fragment
+        android:id="@+id/search_bar"
+        android:name="com.e.androidproject.ui.slideshow.SlideshowFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_search_bar_to_logout"
+            app:destination="@id/logout" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/logout"
+        android:name="com.e.androidproject.ui.logout.LogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_logout" >
+        <action
+            android:id="@+id/action_search_bar_to_logout" />
+    </fragment>
 </navigation>

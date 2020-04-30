@@ -33,7 +33,7 @@ import java.util.HashMap;
 public class AdminAddNewProductActivity extends AppCompatActivity
 {
 
-    private String CategoryName, Description, Price, Pname, saveCurrentDate, saveCurrentTime;
+    private String CategoryName, Description, Price, pName, saveCurrentDate, saveCurrentTime;
     private Button AddNewProductButton;
     private ImageView InputProductImage;
     private EditText InputProductName, InputProductDescription, InputProductPrice;
@@ -109,7 +109,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity
     {
         Description = InputProductDescription.getText().toString();
         Price = InputProductPrice.getText().toString();
-        Pname = InputProductName.getText().toString();
+        pName = InputProductName.getText().toString();
 
         if(ImageUri == null)
         {
@@ -123,7 +123,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity
         {
             Toast.makeText(this,"Please write the product price...", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(Pname))
+        else if(TextUtils.isEmpty(pName))
         {
             Toast.makeText(this,"Please write the product name...", Toast.LENGTH_SHORT).show();
         }
@@ -213,7 +213,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity
         productMap.put("image", downloadImageUrl);
         productMap.put("category",CategoryName);
         productMap.put("price",Price);
-        productMap.put("pname", Pname);
+        productMap.put("pname", pName);
 
         ProductRef.child(productRandomKey).updateChildren(productMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>()

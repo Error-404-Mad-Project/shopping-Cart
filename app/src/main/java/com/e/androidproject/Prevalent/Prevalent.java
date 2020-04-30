@@ -1,7 +1,5 @@
 package com.e.androidproject.Prevalent;
 
-import android.location.Address;
-
 import com.e.androidproject.Model.Users;
 
 public class Prevalent

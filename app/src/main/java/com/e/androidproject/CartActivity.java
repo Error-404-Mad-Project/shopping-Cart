@@ -74,76 +74,57 @@ public class CartActivity extends AppCompatActivity
     protected void onStart()
     {
         super.onStart();
-
-        checkOrderState();
-
-        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
+        //checkOrderState();
+        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("CartList");
 
         FirebaseRecyclerOptions<Cart> options =
                 new FirebaseRecyclerOptions.Builder<Cart>()
                         .setQuery(cartListRef.child("Users View")
-                                .child(Prevalent.currentOnlineUser.getPhone())
+                                .child(Prevalent.currentOnlineUser.getName())
                                 .child("Products"), Cart.class)
                                 .build();
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter
-                = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options)
-        {
+                = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart model)
-            {
-                holder.txtProductQuantity.setText("Quantity =" + model.getQuantity());
+            protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart model) {
+
+                holder.txtProductQuantity.setText("Quantity =" +model.getQuantity());
                 holder.txtProductPrice.setText("Price" + model.getPrice() + "Rs");
                 holder.txtProductName.setText(model.getPname());
-
-                int oneTypeProductPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
-                overTotalPrice = overTotalPrice + oneTypeProductPrice;
-
-                holder.itemView.setOnClickListener(new View.OnClickListener()
-                {
+  //              int oneTypeProductTPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
+  //            overTotalPrice = overTotalPrice + oneTypeProductTPrice;
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v)
-                    {
-                        CharSequence options[] = new CharSequence[]
-                                {
+                    public void onClick(View v) {
+                        CharSequence options[] = new CharSequence[]{
                                         "Edit",
                                         "Delete"
                                 };
-
                         AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
                         builder.setTitle("Cart Options:");
 
-                        builder.setItems(options, new DialogInterface.OnClickListener()
-                        {
+                        builder.setItems(options, new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialogInterface, int i)
-                            {
-                                if(i == 0)
-                                {
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                if(i == 0) {
                                     Intent intent = new Intent(CartActivity.this, ProductDetailsActivity.class);
                                     intent.putExtra("pid",model.getPid());
                                     startActivity(intent);
                                 }
-                                if (i == 1)
-                                {
-                                    cartListRef.child("Users View")
-                                            .child(Prevalent.currentOnlineUser.getPhone())
-                                            .child("Products")
-                                            .child(model.getPid())
+                                if (i == 1) {
+                                    cartListRef.child("Users View").child(Prevalent.currentOnlineUser.getName()).child("Products").child(model.getPid())
                                             .removeValue()
-                                            .addOnCompleteListener(new OnCompleteListener<Void>()
-                                            {
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task)
                                                 {
-                                                   if (task.isSuccessful())
-                                                   {
+                                                   if (task.isSuccessful()) {
                                                        Toast.makeText(CartActivity.this, "Product delete successfully...",Toast.LENGTH_SHORT).show();
 
                                                        Intent intent = new Intent(CartActivity.this, Home2Activity.class);
                                                        startActivity(intent);
                                                    }
-
                                                 }
                                             });
                                 }
@@ -158,23 +139,20 @@ public class CartActivity extends AppCompatActivity
 
             @NonNull
             @Override
-            public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
-            {
+            public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_items_layout, parent, false);
                 CartViewHolder holder = new CartViewHolder(view);
                 return holder;
             }
-
         };
-
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }
 
-    private void checkOrderState()
+    /*private void checkOrderState()
     {
         DatabaseReference orderRef;
-        orderRef = FirebaseDatabase.getInstance().getReference().child("Order").child(Prevalent.currentOnlineUser.getPhone());
+        orderRef = FirebaseDatabase.getInstance().getReference().child("Order").child(Prevalent.currentOnlineUser.getName());
 
         orderRef.addValueEventListener(new ValueEventListener()
         {
@@ -217,5 +195,5 @@ public class CartActivity extends AppCompatActivity
 
             }
         });
-    }
+    }*/
 }

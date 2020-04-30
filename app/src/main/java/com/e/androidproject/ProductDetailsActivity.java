@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +31,7 @@ import java.util.HashMap;
 public class ProductDetailsActivity extends AppCompatActivity
 {
 
-    private FloatingActionButton addToCartBtn;
+    private Button addToCartBtn;
     private ImageView productImage;
     private ElegantNumberButton numberButton;
     private TextView productPrice, productDescription, productName;
@@ -44,7 +45,7 @@ public class ProductDetailsActivity extends AppCompatActivity
 
         productID = getIntent().getStringExtra("pid");
 
-        addToCartBtn = (FloatingActionButton) findViewById(R.id.add_product_to_cart);
+        addToCartBtn = (Button) findViewById(R.id.add_product_to_cart);
         numberButton = (ElegantNumberButton) findViewById(R.id.number_btn);
         productImage = (ImageView) findViewById(R.id.product_image_details);
         productName = (TextView) findViewById(R.id.product_name_details);
@@ -78,8 +79,7 @@ public class ProductDetailsActivity extends AppCompatActivity
        // checkOrderState();
     }
 
-    private void addingToCartList()
-    {
+    private void addingToCartList() {
         String saveCurrentTime, saveCurrentDate;
 
         Calendar calForDate = Calendar.getInstance();
@@ -100,18 +100,14 @@ public class ProductDetailsActivity extends AppCompatActivity
         cartMap.put("quantity", numberButton.getNumber());
         cartMap.put("discount", "");
 
-        cartListRef.child("Users View").child(Prevalent.currentOnlineUser.getPhone())
-                .child("Products").child("productID")
-                .updateChildren(cartMap)
-                .addOnCompleteListener(new OnCompleteListener<Void>()
-                {
+        cartListRef.child("Users View").child(Prevalent.currentOnlineUser.getName()).child("Products").child(productID).updateChildren(cartMap)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task)
                     {
-                        if (task.isSuccessful())
-                        {
-                            cartListRef.child("Admin View").child(Prevalent.currentOnlineUser.getPhone())
-                                    .child("Products").child("productID")
+                        if (task.isSuccessful()) {
+                            cartListRef.child("Admin View").child(Prevalent.currentOnlineUser.getName())
+                                    .child("Products").child(productID)
                                     .updateChildren(cartMap)
                                     .addOnCompleteListener(new OnCompleteListener<Void>()
                                     {
@@ -163,7 +159,7 @@ public class ProductDetailsActivity extends AppCompatActivity
     private void checkOrderState()
     {
         DatabaseReference orderRef;
-        orderRef = FirebaseDatabase.getInstance().getReference().child("Order").child(Prevalent.currentOnlineUser.getPhone());
+        orderRef = FirebaseDatabase.getInstance().getReference().child("Order").child(Prevalent.currentOnlineUser.getName());
 
         orderRef.addValueEventListener(new ValueEventListener()
         {

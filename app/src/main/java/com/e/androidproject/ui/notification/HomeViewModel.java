@@ -1,4 +1,4 @@
-package com.e.androidproject.ui.home;
+package com.e.androidproject.ui.notification;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

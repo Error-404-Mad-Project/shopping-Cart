@@ -1,4 +1,4 @@
-package com.e.androidproject.ui.home;
+package com.e.androidproject.ui.notification;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,7 +26,7 @@ public class HomeFragment extends Fragment
                 ViewModelProviders.of(this).get(HomeViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
+      /**  final TextView textView = root.findViewById(R.id.text_home);
 
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>()
         {
@@ -35,7 +35,7 @@ public class HomeFragment extends Fragment
             {
                 textView.setText(s);
             }
-        });
+        });**/
 
         return root;
     }

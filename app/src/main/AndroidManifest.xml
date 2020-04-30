@@ -9,28 +9,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConfirmFinalOrderActivity"></activity>
-        <activity android:name=".CartActivity" />
-        <activity android:name=".ProductDetailsActivity" />
         <activity
-            android:name=".Home2Activity"
-            android:label="@string/title_activity_home2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AdminAddNewProductActivity" />
-        <activity android:name=".AdminCategoryActivity">
+            android:name=".AdminAddNewProductActivity"
+            android:parentActivityName=".AdminCategoryActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.Bridge" />
+        <activity android:name=".AdminCategoryActivity" />
+        <activity android:name=".Home2Activity" />
+        <activity android:name=".ProductDetailsActivity">
             <intent-filter>
-                <action android:name="android.intent.action.ADMINCATEGORY" />
+                <action android:name="android.intent.action.PRODUCTDETAILS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".CartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CART" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ConfirmFinalOrderActivity" />
+        <activity android:name=".UpdateCustomer" />
+        <activity android:name=".ForgotPassword" />
+        <activity android:name=".ConfirmPassword" />
+        <activity
+            android:name=".RegistrationForm"
+            android:parentActivityName=".Login"
+            android:theme="@style/Theme.MaterialComponents.Light.Bridge" />
+        <activity android:name=".Login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
     </application>
 
 </manifest>
