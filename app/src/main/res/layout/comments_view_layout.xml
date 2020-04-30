@@ -145,10 +145,8 @@
                     android:paddingRight="2dp"
                     android:textColor="@color/white"
                    />
+
             </LinearLayout>
-
-
-
 
         </LinearLayout>
     </RelativeLayout>

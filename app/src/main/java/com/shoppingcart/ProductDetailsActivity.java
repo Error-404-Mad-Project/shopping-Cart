@@ -76,6 +76,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProductDetailsActivity.this, WriteComment.class);
+                intent.putExtra("pid",productID);
                 startActivity(intent);
             }
         });

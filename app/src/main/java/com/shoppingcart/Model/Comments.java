@@ -1,19 +1,29 @@
 package com.shoppingcart.Model;
 
 public class Comments {
-    public String cId,pname,name,comment,date,time;
+    public String cId,pname,name,comment,date,time,pid;
 
     public Comments() {
     }
 
-    public Comments(String cId, String pname, String name, String comment, String date, String time) {
+    public Comments(String pid,String cId, String pname, String name, String comment, String date, String time) {
         this.cId = cId;
         this.pname = pname;
         this.name = name;
         this.comment = comment;
         this.date = date;
         this.time = time;
+        this.pid = pid;
     }
+
+    public String getpid() {
+        return pid;
+    }
+
+    public void setpid(String pid) {
+        this.pid = pid;
+    }
+
 
     public String getcId() {
         return cId;

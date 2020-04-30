@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.shoppingcart.Model.Products;
+import com.shoppingcart.Model.Users;
 import com.shoppingcart.Prevalent.Prevalent;
 import com.squareup.picasso.Picasso;
 
@@ -32,14 +33,12 @@ public class WriteComment extends AppCompatActivity {
     private EditText commentEt;
     private ImageButton sendBtn;
     private String commentWrite;
-
-    private TextView UserName, productName;
-
+     private TextView UserName, productName;
 
     private String productID = "", state = "Normal";
     private String CommentRandomKey;
 
-    private DatabaseReference CommentListRef;
+    private DatabaseReference CommentListRef,UsersRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +53,9 @@ public class WriteComment extends AppCompatActivity {
         commentEt = (EditText) findViewById(R.id.commentEt);
 
         getProductDetails(productID);
+
+        userInforDisplay(UserName);
+
 
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,9 +74,31 @@ public class WriteComment extends AppCompatActivity {
         });
     }
 
+    private void userInforDisplay(final TextView userName) {
+        final DatabaseReference UsersRef =FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentOnlineUser.getPhone());
+
+        UsersRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists())
+                {
+                    Users users = dataSnapshot.getValue(Users.class);
+
+                    UserName.setText(users.getName());
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
 
     private void addingToCommentList() {
-
 
         Calendar calForDate = Calendar.getInstance();
         SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
@@ -88,6 +112,7 @@ public class WriteComment extends AppCompatActivity {
         final DatabaseReference CommentListRef = FirebaseDatabase.getInstance().getReference().child("CommentList");
 
         final HashMap<String, Object> commentMap = new HashMap<>();
+        commentMap.put("pid", productID);
         commentMap.put("cId", CommentRandomKey);
         commentMap.put("pname", productName.getText().toString());
         commentMap.put("name", UserName.getText().toString());
@@ -96,15 +121,15 @@ public class WriteComment extends AppCompatActivity {
         commentMap.put("time", saveCurrentTime);
 
 
-       CommentListRef.child("Users View").child(Prevalent.currentOnlineUser.getName())
+       CommentListRef.child("Users View").child(Prevalent.currentOnlineUser.getPhone())
                 .child("Products").child("productID")
                 .child("Comments").child("cId")
                 .updateChildren(commentMap)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                .addOnCompleteListener( new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            CommentListRef.child("Admin View").child(Prevalent.currentOnlineUser.getName())
+                            CommentListRef.child("Admin View").child(Prevalent.currentOnlineUser.getPhone())
                                     .child("Products").child("productID")
                                     .child("Comments").child("cId")
                                     .updateChildren(commentMap)
@@ -112,7 +137,7 @@ public class WriteComment extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                Toast.makeText(WriteComment.this, "Added to Cart List.", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(WriteComment.this, "Added to Comment List.", Toast.LENGTH_SHORT).show();
 
                                                 Intent intent = new Intent(WriteComment.this,Viewcomments.class);
                                                 startActivity(intent);
