@@ -114,7 +114,7 @@ public class HomeActivity extends AppCompatActivity
             FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
                     new FirebaseRecyclerAdapter<Products, ProductViewHolder> (options) {
                         @Override
-                        public void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull Products model) {
+                        public void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model) {
                             holder.txtProductName.setText (model.getPname ());
                             holder.txtProductDescription.setText (model.getDescription ());
                             holder.txtProductPrice.setText ("Price =" + "Rs." + model.getPrice ());
@@ -124,6 +124,7 @@ public class HomeActivity extends AppCompatActivity
                                 @Override
                                 public void onClick(View v) {
                                     Intent intent = new Intent(HomeActivity.this,ProductDetailsActivity.class);
+                                    intent.putExtra("pid",model.getPid());
                                     startActivity(intent);
 
 
