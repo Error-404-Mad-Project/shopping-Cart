@@ -198,6 +198,7 @@ public class RegistrationForm extends AppCompatActivity {
         String cnf_pwd = confirmPassword.getText ().toString ();
 
 
+
         if (TextUtils.isEmpty (name)) {
             userName.setError ("Field can't be empty");
             Toast.makeText (this, "Please enter your Name..", Toast.LENGTH_SHORT).show ();
@@ -228,7 +229,17 @@ public class RegistrationForm extends AppCompatActivity {
         RootRef.addListenerForSingleValueEvent (new ValueEventListener () {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (!(dataSnapshot.child ("Users").child (name).exists ())) {
+                if ((dataSnapshot.child ("Users").child (name).exists ())) {
+                    Toast.makeText (RegistrationForm.this, "This" + name + "already exists.", Toast.LENGTH_SHORT).show ();
+                    loadingBar.dismiss ();
+                    Toast.makeText (RegistrationForm.this, "Please try again using another User Name.", Toast.LENGTH_SHORT).show ();
+
+                    Intent intent = new Intent (RegistrationForm.this, MainActivity.class);
+                    startActivity (intent);
+
+                } else {
+
+
                     HashMap<String, Object> userdataMap = new HashMap<> ();
                     userdataMap.put ("email", email);
                     userdataMap.put ("address", add);
@@ -266,13 +277,6 @@ public class RegistrationForm extends AppCompatActivity {
                                 }
                             });
 
-                } else {
-                    Toast.makeText (RegistrationForm.this, "This" + name + "already exists.", Toast.LENGTH_SHORT).show ();
-                    loadingBar.dismiss ();
-                    Toast.makeText (RegistrationForm.this, "Please try again using another name.", Toast.LENGTH_SHORT).show ();
-
-                    Intent intent = new Intent (RegistrationForm.this, MainActivity.class);
-                    startActivity (intent);
                 }
             }
 

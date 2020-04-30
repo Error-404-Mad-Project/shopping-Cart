@@ -27,7 +27,7 @@
                     android:id="@+id/close_settings_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Close"
+                    android:text="Delete"
                     android:textColor="@android:color/white"
                     android:textSize="17sp"
                     android:textStyle="bold"
@@ -136,6 +136,8 @@
         android:layout_marginBottom="25dp"
         android:hint="Phone"
         android:padding="10dp" />
+
+
 
 
 

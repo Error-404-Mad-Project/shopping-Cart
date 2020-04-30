@@ -1,9 +1,11 @@
 package com.shoppingcart;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -70,7 +72,7 @@ public class UpdateProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                finish();
+                deleteUser("Users");
             }
         });
 
@@ -103,6 +105,14 @@ public class UpdateProductActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void deleteUser(String name)
+    {
+       DatabaseReference user = FirebaseDatabase.getInstance ().getReference ().child ("Users");
+       user.removeValue ();
+
+       Toast.makeText (this,"Delete Successfully",Toast.LENGTH_SHORT).show ();
     }
 
 

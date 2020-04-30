@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.InetAddresses;
 import android.net.Uri;
@@ -21,6 +24,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -67,6 +71,8 @@ public class UpdateCustomer extends AppCompatActivity {
         profileChangeTextBtn = (TextView) findViewById(R.id.profile_image_change_btn);
         closeTextBtn = (TextView) findViewById(R.id.close_settings_btn);
         saveTextButton = (TextView) findViewById(R.id.update_account_settings_btn);
+
+
 //
 //        if (getActionBar () != null )
 //        {
@@ -80,7 +86,8 @@ public class UpdateCustomer extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                finish();
+                deleteProfile();
+
             }
         });
 
@@ -122,7 +129,7 @@ public class UpdateCustomer extends AppCompatActivity {
         userMap. put("address", addressEditText.getText().toString());
         userMap. put("phone", phoneEditText.getText().toString());
 
-        reference.child(Prevalent.currentOnlineUser.getName()).updateChildren(userMap);
+        reference.child(Prevalent.currentOnlineUser.getName ()).updateChildren(userMap);
 
         startActivity (new Intent (UpdateCustomer.this,HomeActivity.class));
         Toast.makeText (UpdateCustomer.this,"Profile Update Successfully.",Toast.LENGTH_SHORT).show ();
@@ -149,6 +156,40 @@ public class UpdateCustomer extends AppCompatActivity {
             finish();
         }
     }
+
+    private void deleteProfile(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder (this);
+        builder.setMessage ("Are you sure want to delete your data?")
+                .setCancelable (false)
+                .setPositiveButton ("Yes", new DialogInterface.OnClickListener () {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
+
+                        UsersRef.child (Prevalent.currentOnlineUser.getName ()).removeValue ().addOnCompleteListener (new OnCompleteListener<Void> () {
+
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                                Intent intent = new Intent (UpdateCustomer.this, Login.class);
+                                startActivity (intent);
+                                finish();
+                            }
+                        });
+                    }
+                })
+                .setNegativeButton ("No", new DialogInterface.OnClickListener () {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel ();
+                    }
+                });
+        AlertDialog alertDialog = builder.create ();
+        alertDialog.show ();
+
+    }
+
 
     private void userInfoSaved()
     {
@@ -246,23 +287,25 @@ public class UpdateCustomer extends AppCompatActivity {
 
     private void userInfoDisplay(final CircleImageView profileImageView, final EditText fullNameEditText, final EditText userEmailEditText, final EditText addressEditText, final EditText phoneEditText)
     {
-        DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentOnlineUser.getName());
+        DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
-        UsersRef.addValueEventListener(new ValueEventListener() {
+        UsersRef.addChildEventListener (new ChildEventListener () {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
-            {
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 if (dataSnapshot.exists())
                 {
-                    if (dataSnapshot.child("image").exists())
+
+                    String Name = dataSnapshot.child("name").getValue (String.class);
+
+                    if (Prevalent.currentOnlineUser.getName ().equals (Name))
                     {
-                        String image = dataSnapshot.child("image").getValue().toString();
+//                        String image = dataSnapshot.child("image").getValue().toString();
                         String name = dataSnapshot.child("name").getValue().toString();
                         String email = dataSnapshot.child("email").getValue().toString();
                         String address = dataSnapshot.child("address").getValue().toString();
                         String phone = dataSnapshot.child("phone").getValue().toString();
 
-                        Picasso.get().load(image).into(profileImageView);
+//                        Picasso.get().load(image).into(profileImageView);
                         fullNameEditText.setText(name);
                         userEmailEditText.setText(email);
                         addressEditText.setText(address);
@@ -272,9 +315,56 @@ public class UpdateCustomer extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
+
+//        UsersRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot)
+//            {
+//                if (dataSnapshot.exists())
+//                {
+//
+//                    String Name = dataSnapshot.child("name").getValue (String.class);
+//
+//                    if (Prevalent.currentOnlineUser.getName ().equals (Name))
+//                    {
+//                        String image = dataSnapshot.child("image").getValue().toString();
+//                        String name = dataSnapshot.child("name").getValue().toString();
+//                        String email = dataSnapshot.child("email").getValue().toString();
+//                        String address = dataSnapshot.child("address").getValue().toString();
+//                        String phone = dataSnapshot.child("phone").getValue().toString();
+//
+//                        Picasso.get().load(image).into(profileImageView);
+//                        fullNameEditText.setText(name);
+//                        userEmailEditText.setText(email);
+//                        addressEditText.setText(address);
+//                        phoneEditText.setText(phone);
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 }
