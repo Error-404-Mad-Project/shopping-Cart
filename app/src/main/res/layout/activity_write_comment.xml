@@ -7,16 +7,27 @@
 
 
     <TextView
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:background="@drawable/edit_text_border"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/view_uName"
+        android:paddingRight="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_margin="20dp"
         android:text="Name"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:gravity="center_horizontal" />
+
     <TextView
+        android:background="@drawable/edit_text_border"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textStyle="italic"
+        android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/product_name"
@@ -25,7 +36,8 @@
         android:layout_marginRight="20dp"
 
         android:text="Product"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:gravity="center_horizontal" />
 
     <EditText
         android:id="@+id/commentEt"
@@ -41,6 +53,7 @@
         android:layout_toLeftOf="@id/sendBtn" />
 
     <ImageButton
+
         android:id="@+id/sendBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,12 +64,15 @@
         android:layout_alignParentRight="true" />
 
     <Button
+        android:textColor="@color/white"
+        android:background="@drawable/button_border"
         android:layout_marginTop="500dp"
         android:layout_marginLeft="150dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/view_Button"
         android:text="View Messages"
+
         />
 
 

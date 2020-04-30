@@ -7,6 +7,9 @@
     tools:context=".EditComment">
 
     <TextView
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textStyle="italic"
+        android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/view_uName"
@@ -16,7 +19,11 @@
         android:layout_margin="20dp"
         android:text="Name"
         android:textSize="20dp"/>
+
     <TextView
+        android:background="@drawable/edit_text_border"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textStyle="italic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/product_name"
